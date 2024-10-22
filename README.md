@@ -1,9 +1,10 @@
-# CrmDashboard
+# CRM Dashboard
 
 ## Libraries
 
-    - Nx 20
-    - Angular 18
+    - Node v20
+    - Nx v20
+    - Angular v18
     - Tailwind
     - Eslint
     - Jest
@@ -11,7 +12,15 @@
     - Husky
     - Lint staged
 
+    This project was created using Node v20
+
 ## Run tasks
+
+Install project locally, use:
+
+```sh
+npm i
+```
 
 To run the dev server for your app, use:
 
