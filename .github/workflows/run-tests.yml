@@ -26,7 +26,9 @@ jobs:
 
       - name: Install dependencies
       - run: npm ci --legacy-peer-deps
-      - uses: nrwl/nx-set-shas@v4
+
+      - name: Set Nx SHAs
+        uses: nrwl/nx-set-shas@v4
 
       - name: Run NX unit tests
         run: npx nx test --all --watch=false --bail
