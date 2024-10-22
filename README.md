@@ -19,6 +19,12 @@ To run the dev server for your app, use:
 npx nx serve crm-dashboard
 ```
 
+To run tests, use:
+
+```sh
+npx nx test
+```
+
 To create a production bundle:
 
 ```sh
