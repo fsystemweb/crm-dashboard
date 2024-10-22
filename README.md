@@ -25,12 +25,14 @@ To create a production bundle:
 npx nx build crm-dashboard
 ```
 
-To see all available targets to run for a project, run:
+To run lint checks
 
 ```sh
-npx nx show project crm-dashboard
+npx nx lint
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+To run prettier format
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```sh
+npx nx format:check
+```
