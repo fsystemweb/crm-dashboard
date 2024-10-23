@@ -9,12 +9,33 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    title: 'home',
+    title: 'Dashboard',
     loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
-    path: '**',
-    redirectTo: 'home',
+    path: 'product',
+    title: 'Product',
+    loadChildren: () => import('./features/product/product.module').then((m) => m.ProductModule),
+  },
+  {
+    path: 'customers',
+    title: 'Customers',
+    loadChildren: () => import('./features/customers/customers.module').then((m) => m.CustomersModule),
+  },
+  {
+    path: 'income',
+    title: 'Income',
+    loadChildren: () => import('./features/income/income.module').then((m) => m.IncomeModule),
+  },
+  {
+    path: 'promote',
+    title: 'Promote',
+    loadChildren: () => import('./features/promote/promote.module').then((m) => m.PromoteModule),
+  },
+  {
+    path: 'help',
+    title: 'Help',
+    loadChildren: () => import('./features/help/help.module').then((m) => m.HelpModule),
   },
 ];
 

@@ -2,9 +2,9 @@
 
 ## Libraries
 
-    - Node 20
-    - Nx 20
-    - Angular 18
+    - Node v20
+    - Nx v20
+    - Angular v18
     - Tailwind
     - Eslint
     - Jest
@@ -12,7 +12,7 @@
     - Husky
     - Lint staged
 
-    This poject was created using Node v20
+    This project was created using Node v20
 
 ## Run tasks
 
