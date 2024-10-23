@@ -7,4 +7,4 @@ import { IncomePageComponent } from './page/income-page.component';
   imports: [IncomeRoutingModule, CommonModule],
   declarations: [IncomePageComponent],
 })
-export class DashboardModule {}
+export class IncomeModule {}

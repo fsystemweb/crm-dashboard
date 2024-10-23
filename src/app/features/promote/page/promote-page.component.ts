@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  templateUrl: './dashboard-page.component.html',
+  templateUrl: './promote-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardPageComponent {}
+export class PromotePageComponent {}
