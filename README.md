@@ -84,3 +84,7 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
    ```bash
    npx nx test --all --watch=false --bail
    ```
+
+## Design
+
+-Figma: https://www.figma.com/design/x37vTidKs6RttTOckuXCib/CRM-Dashboard-Customers-List-(Community)?t=mpBkgaJxeI75i3i8-0

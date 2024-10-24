@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
 body {
   @apply bg-gray-100 text-gray-800;
+  font-family: Poppins;
 }
 
 .custom-button {
