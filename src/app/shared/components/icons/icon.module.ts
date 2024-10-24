@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-
 import { Icon, iconRegistry } from './models/icon';
 
 const iconPath = (iconName: string): string => `/icons/${iconName}.svg`;
