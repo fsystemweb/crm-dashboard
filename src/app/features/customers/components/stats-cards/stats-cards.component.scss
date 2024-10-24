@@ -1,0 +1,14 @@
+$stat-icon-size: 42px;
+$arrow-icon-size: 20px;
+
+.stats-icon {
+  width: $stat-icon-size;
+  height: $stat-icon-size;
+}
+
+.arrow {
+  width: $arrow-icon-size;
+  height: $arrow-icon-size;
+  position: relative;
+  bottom: 1px;
+}
