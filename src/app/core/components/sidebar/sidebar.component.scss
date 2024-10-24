@@ -2,14 +2,14 @@ nav a {
   @apply text-customGrey;
 }
 
-nav a:hover {
-  @apply bg-purple-100 text-purple-700 rounded-lg;
-}
-
 .active {
   @apply bg-purple-700 rounded-lg;
 }
 
 nav a.active {
   @apply text-white;
+}
+
+nav a:hover {
+  @apply bg-purple-100 text-purple-700 rounded-lg;
 }
