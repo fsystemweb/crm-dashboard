@@ -1,7 +1,13 @@
 <header class="flex justify-between items-center mb-10">
   <h1 class="text-2xl font-bold">Hello {{ username }} 👋</h1>
   <div class="relative">
-    <input type="text" placeholder="Search" class="bg-white p-2 rounded-lg shadow-sm focus:outline-none" />
-    <mat-icon class="absolute top-2 right-3 w-5 h-5 text-gray-500" svgIcon="search" />
+    <input
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchInput"
+      class="bg-white p-2 rounded-lg shadow-sm focus:outline-none placeholder:pl-8 placeholder:text-sm" />
+    @if(searchInput.length === 0){
+    <mat-icon class="absolute top-2 left-2 w-5 h-5 text-gray-500" svgIcon="search" />
+    }
   </div>
 </header>

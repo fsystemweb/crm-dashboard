@@ -1,0 +1,21 @@
+<div class="flex justify-between mb-4">
+  <div>
+    <h2 class="text-2xl font-semibold">All Customers</h2>
+    <span class="text-green-500">Active members</span>
+  </div>
+  <div class="flex space-x-4 h-10">
+    <div class="relative">
+      <input
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchInput"
+        class="bg-gray-100 p-2 rounded-lg focus:outline-none placeholder:pl-8 placeholder:text-sm" />
+      @if(searchInput.length === 0){
+      <mat-icon class="absolute top-2 left-2 w-5 h-5 text-gray-500" svgIcon="search" />
+      }
+    </div>
+    <select class="bg-gray-100 px-2 rounded-lg">
+      <option>Sort by: Newest</option>
+    </select>
+  </div>
+</div>
