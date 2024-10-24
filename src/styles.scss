@@ -7,12 +7,9 @@
   src: url('/fonts/Poppins-Regular.ttf') format('truetype');
 }
 
+html,
 body {
+  height: 100%;
   @apply bg-gray-100 text-gray-800;
   font-family: Poppins;
-}
-
-.custom-button {
-  background-color: #3490dc;
-  @apply text-white font-bold py-2 px-4 rounded;
 }
