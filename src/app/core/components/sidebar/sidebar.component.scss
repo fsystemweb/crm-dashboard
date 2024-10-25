@@ -1,3 +1,6 @@
+$sidebar-width-closed: 99px;
+$nav-item-open-width: 14rem;
+
 nav a {
   @apply text-customGrey;
 }
@@ -12,4 +15,38 @@ nav a.active {
 
 nav a:hover {
   @apply bg-purple-100 text-purple-700 rounded-lg;
+}
+
+.closed {
+  width: $sidebar-width-closed;
+}
+
+.sidebar {
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-text {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar:not(.closed) .menu-text {
+  opacity: 1;
+  transform: translateX(0);
+  width: $nav-item-open-width;
+}
+
+.closed-logo {
+  width: 100%;
+  justify-content: center;
+}
+
+.closed-logo mat-icon {
+  margin: 0;
 }
