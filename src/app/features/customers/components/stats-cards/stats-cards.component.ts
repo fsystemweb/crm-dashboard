@@ -4,6 +4,7 @@ import { StatsCards } from '../../models/stats-cards.interface';
 @Component({
   selector: 'app-stats-cards',
   templateUrl: './stats-cards.component.html',
+  styleUrls: ['./stats-cards.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatsCardsComponent {
