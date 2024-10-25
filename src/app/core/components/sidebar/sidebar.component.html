@@ -1,32 +1,60 @@
-<aside class="w-80 bg-white p-5 h-full">
-  <div class="flex items-center mb-8">
-    <mat-icon alt="Dashboard logo" class="w-10 h-10 mr-2" svgIcon="logo" />
-    <span class="text-lg font-bold">CRM Dashboard</span>
-  </div>
+<aside class="w-80 bg-white p-7 h-full sidebar" [class.closed]="!isExpanded">
+  <button
+    class="flex items-center mb-8"
+    [class.closed-logo]="!isExpanded"
+    (click)="toggleSidebar()"
+    matTooltip="CRM - Toolbar"
+    matTooltipPosition="right"
+    [matTooltipDisabled]="isExpanded">
+    <mat-icon alt="Dashboard logo" class="w-10 h-10 ml-2 mr-2" svgIcon="logo" />
+    <span class="text-lg font-bold menu-text" *ngIf="isExpanded">CRM Dashboard</span>
+  </button>
   <nav class="space-y-4">
-    <a routerLink="/home" class="flex items-center text-blueGray-400" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="key" />
-      <span>Dashboard</span>
+    <a routerLink="/home" class="flex items-center" [class.closed-item]="!isExpanded" routerLinkActive="active">
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="key" matTooltip="Dashboard" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Dashboard</span>
     </a>
     <a routerLink="/product" class="flex items-center" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="cube" />
-      <span>Product</span>
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="cube" matTooltip="Product" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Product</span>
     </a>
     <a routerLink="/customers" class="flex items-center" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="user" />
-      <span>Customers</span>
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="user" matTooltip="Customers" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Customers</span>
     </a>
     <a routerLink="/income" class="flex items-center" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="wallet" />
-      <span>Income</span>
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="wallet" matTooltip="Income" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Income</span>
     </a>
     <a routerLink="/promote" class="flex items-center" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="promote" />
-      <span>Promote</span>
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="promote" matTooltip="Promote" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Promote</span>
     </a>
     <a routerLink="/help" class="flex items-center" routerLinkActive="active">
-      <mat-icon class="w-6 h-6 m-2" svgIcon="help" />
-      <span>Help</span>
+      <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="help" matTooltip="Help" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
+      <span class="menu-text" *ngIf="isExpanded">Help</span>
     </a>
   </nav>
+
+  <div class="static">
+    <div class="absolute bottom-0 left-0 pb-20 pl-7 flex">
+      <div class="flex mt-2">
+        <img
+          [src]="user.picture | userPicture"
+          alt="User"
+          class="w-11 h-11 rounded-full cursor-pointer"
+          [matTooltip]="user | userRole"
+          matTooltipPosition="right"
+          [matTooltipDisabled]="isExpanded" />
+      </div>
+      <div>
+        @if(isExpanded){
+        <div class="flex flex-col ml-2 mt-3">
+          <span class="text-sm">{{ user.fullname }}</span>
+          <span class="text-xs text-customGreyFont">{{ user.role }}</span>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
 </aside>
