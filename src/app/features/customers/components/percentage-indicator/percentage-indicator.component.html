@@ -1,0 +1,17 @@
+@if(indicator() > 0){
+<div class="text-black mt-1 text-sm flex justify-center items-center">
+  <div class="text-green-600 font-semibold flex justify-center items-center pr-1">
+    <mat-icon svgIcon="arrow" class="arrow" />
+    {{ indicator() }}%
+  </div>
+  this month
+</div>
+}@else{
+<div class="text-black mt-1 text-sm flex justify-center items-center">
+  <div class="text-red-600 font-semibold flex justify-center items-center pr-1">
+    <mat-icon svgIcon="arrow" class="arrow rotate-180" />
+    {{ indicator() | mathAbs }}%
+  </div>
+  this month
+</div>
+}

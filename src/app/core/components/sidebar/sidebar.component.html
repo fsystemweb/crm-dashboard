@@ -35,4 +35,26 @@
       <span class="menu-text" *ngIf="isExpanded">Help</span>
     </a>
   </nav>
+
+  <div class="static">
+    <div class="absolute bottom-0 left-0 pb-20 pl-7 flex">
+      <div class="flex mt-2">
+        <img
+          [src]="user.picture | userPicture"
+          alt="User"
+          class="w-11 h-11 rounded-full"
+          matTooltip="User Picture"
+          matTooltipPosition="right"
+          [matTooltipDisabled]="isExpanded" />
+      </div>
+      <div>
+        @if(isExpanded){
+        <div class="flex flex-col ml-2 mt-3">
+          <span class="text-sm">{{ user.fullname }}</span>
+          <span class="text-xs text-customGreyFont">{{ user.role }}</span>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
 </aside>

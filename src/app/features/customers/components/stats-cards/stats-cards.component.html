@@ -8,14 +8,8 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Total Customers</p>
-      <p class="text-3xl font-semibold mt-2">5,423</p>
-      <div class="text-black mt-1 text-sm flex justify-center items-center">
-        <div class="text-green-600 font-semibold flex justify-center items-center pr-1">
-          <mat-icon svgIcon="arrow" class="arrow" />
-          16%
-        </div>
-        this month
-      </div>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalCustomer }}</p>
+      <app-percentage-indicator [indicator]="statsCards.customerPercentage" />
     </div>
   </div>
 
@@ -29,14 +23,8 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Members</p>
-      <p class="text-3xl font-semibold mt-2">1,893</p>
-      <div class="text-black mt-1 text-sm flex justify-center items-center">
-        <div class="text-red-600 font-semibold flex justify-center items-center pr-1">
-          <mat-icon svgIcon="arrow" class="arrow rotate-180" />
-          1%
-        </div>
-        this month
-      </div>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalMembers }}</p>
+      <app-percentage-indicator [indicator]="statsCards.membersPercentage" />
     </div>
   </div>
 
@@ -51,13 +39,15 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Active Now</p>
-      <p class="text-3xl font-semibold mt-2">123</p>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive }}</p>
       <div class="flex mt-2">
-        <img src="/images/users/brian.jpeg" alt="User" class="w-6 h-6 rounded-full border-2 border-white -ml-2" />
-        <img src="/images/users/eric.jpeg" alt="User" class="w-6 h-6 rounded-full border-2 border-white -ml-2" />
-        <img src="images/users/katherine.jpeg" alt="User" class="w-6 h-6 rounded-full border-2 border-white -ml-2" />
-        <img src="images/users/lynn.jpeg" alt="User" class="w-6 h-6 rounded-full border-2 border-white -ml-2" />
-        <img src="/images/users/willie.jpeg" alt="User" class="w-6 h-6 rounded-full border-2 border-white -ml-2" />
+        @for (user of statsCards.userActives; track user) {
+        <img
+          [src]="user.picture | userPicture"
+          [alt]="user.fullname"
+          [matTooltip]="user | userRole"
+          class="w-6 h-6 rounded-full border-2 border-white -ml-2 cursor-pointer" />
+        }
       </div>
     </div>
   </div>
