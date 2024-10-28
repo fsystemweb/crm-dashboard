@@ -14,8 +14,6 @@
       <mat-icon class="absolute top-2 left-2 w-5 h-5 text-gray-500" svgIcon="search" />
       }
     </div>
-    <select class="bg-gray-100 px-2 rounded-lg">
-      <option>Sort by: Newest</option>
-    </select>
+    <app-select [options]="sortOptions" (selectionChange)="updateSortValue($event)" prefix="Sort By: " />
   </div>
 </div>

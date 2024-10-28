@@ -13,9 +13,20 @@ import { UserPicturePathPipe } from 'src/app/shared/pipes/user-picture-path.pipe
 import { MathAbsPipe } from 'src/app/shared/pipes/math-abs.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
+import { SelectComponent } from '../../shared/components/select/select.component';
 
 @NgModule({
-  imports: [CustomersRoutingModule, CommonModule, IconModule, FormsModule, UserPicturePathPipe, MathAbsPipe, MatTooltipModule, UserRolePipe],
+  imports: [
+    CustomersRoutingModule,
+    CommonModule,
+    IconModule,
+    FormsModule,
+    UserPicturePathPipe,
+    MathAbsPipe,
+    MatTooltipModule,
+    UserRolePipe,
+    SelectComponent,
+  ],
   declarations: [
     CustomersPageComponent,
     StatsCardsComponent,
