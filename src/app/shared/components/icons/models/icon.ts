@@ -12,6 +12,7 @@ const iconRegistry = [
   'user-verified',
   'arrow',
   'chevron-down',
+  'cross',
 ];
 
 type Icon = (typeof iconRegistry)[number];

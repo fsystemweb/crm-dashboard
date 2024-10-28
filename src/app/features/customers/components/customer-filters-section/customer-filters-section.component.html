@@ -4,12 +4,23 @@
     <span class="text-green-500">Active members</span>
   </div>
   <div class="flex space-x-4 h-10">
+    <div class="p-2">
+      @for(tag of tags; track tag){
+      <button (click)="clickOnTag(tag)">
+        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+          {{ tag }}
+          <mat-icon svgIcon="cross" class="align-middle tag-icon" />
+        </span>
+      </button>
+      }
+    </div>
     <div class="relative">
       <input
         type="text"
         placeholder="Search"
         [(ngModel)]="searchInput"
-        class="bg-gray-100 p-2 rounded-lg focus:outline-none placeholder:pl-8 placeholder:text-sm" />
+        class="bg-gray-100 p-2 rounded-lg focus:outline-none placeholder:pl-8 placeholder:text-sm"
+        (keyup.enter)="addTag()" />
       @if(searchInput.length === 0){
       <mat-icon class="absolute top-2 left-2 w-5 h-5 text-gray-500" svgIcon="search" />
       }
