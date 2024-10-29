@@ -16,7 +16,7 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "cloud": {
-    "enabled": true
+    "enabled": false
   },
   "targetDefaults": {
     "@angular-devkit/build-angular:browser": {

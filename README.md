@@ -88,3 +88,10 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 ## Design
 
 -Figma: https://www.figma.com/design/x37vTidKs6RttTOckuXCib/CRM-Dashboard-Customers-List-(Community)?t=mpBkgaJxeI75i3i8-0
+
+## Pending Tasks
+
+Here’s a list of pending tasks and features to implement:
+
+- [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
+- [ ] Add test coverage report.
