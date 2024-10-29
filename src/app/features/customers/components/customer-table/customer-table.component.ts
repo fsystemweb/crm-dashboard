@@ -6,6 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./customer-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomerTableComponent {
-  searchInput = '';
-}
+export class CustomerTableComponent {}
