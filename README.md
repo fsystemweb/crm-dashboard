@@ -22,10 +22,22 @@ Install project locally, use:
 npm i
 ```
 
-To run the dev server for your app, use:
+To start local app, with Angular server and Mock API, use:
+
+```sh
+npm run start
+```
+
+To run only the dev server for Angular, use:
 
 ```sh
 npx nx serve crm-dashboard
+```
+
+To start only the json-server(API-mock), use:
+
+```sh
+npm run jsonserver
 ```
 
 To run tests, use:
@@ -93,7 +105,7 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 
 Here’s a list of pending tasks and features to implement:
 
-- [ ] Add mock Api.
+- [x] Add mock Api.
 - [ ] Add Ngrx.
 - [ ] Add spinner.
 - [ ] Add Interceptor error handler.

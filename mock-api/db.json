@@ -1,0 +1,179 @@
+{
+  "statInfo": {
+    "totalCustomer": 5423,
+    "customerPercentage": 16,
+    "totalMembers": 1893,
+    "membersPercentage": -1,
+    "totalUserActive": 123,
+    "userActives": [
+      {
+        "fullname": "Willie",
+        "role": "Manager",
+        "picture": "willie.jpeg"
+      },
+      {
+        "fullname": "Brian",
+        "role": "Volunteer",
+        "picture": "brian.jpeg"
+      },
+      {
+        "fullname": "Eric",
+        "role": "Newborn baby",
+        "picture": "eric.jpeg"
+      },
+      {
+        "fullname": "Katherine",
+        "role": "CTO",
+        "picture": "katherine.jpeg"
+      },
+      {
+        "fullname": "Lynn",
+        "role": "CFO",
+        "picture": "lynn.jpeg"
+      }
+    ]
+  },
+  "userInfo": {
+    "fullname": "Alf",
+    "role": "CEO",
+    "picture": "alf.jpeg"
+  },
+  "customers": [
+    {
+      "customerName": "John Doe",
+      "company": "Acme Corp",
+      "phone": "+1-555-0123",
+      "email": "john.doe@acmecorp.com",
+      "country": "USA",
+      "status": "Active"
+    },
+    {
+      "customerName": "Jane Smith",
+      "company": "Global Industries",
+      "phone": "+44-20-7946-0958",
+      "email": "jane.smith@global.com",
+      "country": "UK",
+      "status": "Active"
+    },
+    {
+      "customerName": "Alice Johnson",
+      "company": "Tech Innovations",
+      "phone": "+1-555-9876",
+      "email": "alice.johnson@techinnov.com",
+      "country": "Canada",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Robert Brown",
+      "company": "FinServe",
+      "phone": "+49-30-123456789",
+      "email": "robert.brown@finserve.de",
+      "country": "Germany",
+      "status": "Active"
+    },
+    {
+      "customerName": "Maria Garcia",
+      "company": "HealthFirst",
+      "phone": "+34-91-123-4567",
+      "email": "maria.garcia@healthfirst.es",
+      "country": "Spain",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Chris Wilson",
+      "company": "Eco Solutions",
+      "phone": "+61-2-9876-5432",
+      "email": "chris.wilson@ecosolutions.com",
+      "country": "Australia",
+      "status": "Active"
+    },
+    {
+      "customerName": "Priya Singh",
+      "company": "Innovatech",
+      "phone": "+91-22-1234-5678",
+      "email": "priya.singh@innovatech.in",
+      "country": "India",
+      "status": "Active"
+    },
+    {
+      "customerName": "Michael Johnson",
+      "company": "BuildRight",
+      "phone": "+1-555-6543",
+      "email": "michael.j@buildright.com",
+      "country": "USA",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Sophie Chen",
+      "company": "Bright Future",
+      "phone": "+65-1234-5678",
+      "email": "sophie.chen@brightfuture.sg",
+      "country": "Singapore",
+      "status": "Active"
+    },
+    {
+      "customerName": "Daniel Martinez",
+      "company": "Global Ventures",
+      "phone": "+52-55-1234-5678",
+      "email": "daniel.martinez@globalventures.com",
+      "country": "Mexico",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Emma Brown",
+      "company": "Creative Solutions",
+      "phone": "+1-555-1111",
+      "email": "emma.brown@creativesolutions.com",
+      "country": "USA",
+      "status": "Active"
+    },
+    {
+      "customerName": "Liam Smith",
+      "company": "TechWave",
+      "phone": "+44-20-1234-5678",
+      "email": "liam.smith@techwave.co.uk",
+      "country": "UK",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Olivia Johnson",
+      "company": "FinTech Inc",
+      "phone": "+49-30-9876-5432",
+      "email": "olivia.j@fintechinc.de",
+      "country": "Germany",
+      "status": "Active"
+    },
+    {
+      "customerName": "James Lee",
+      "company": "HealthTech",
+      "phone": "+34-91-876-5432",
+      "email": "james.lee@healthtech.es",
+      "country": "Spain",
+      "status": "Active"
+    },
+    {
+      "customerName": "Ava Patel",
+      "company": "Green Solutions",
+      "phone": "+61-2-1234-5678",
+      "email": "ava.patel@greensolutions.com",
+      "country": "Australia",
+      "status": "Inactive"
+    },
+    {
+      "customerName": "Noah Kim",
+      "company": "Innovators Hub",
+      "phone": "+91-22-8765-4321",
+      "email": "noah.kim@innovatorshub.in",
+      "country": "India",
+      "status": "Active"
+    },
+    {
+      "customerName": "Sophia Zhang",
+      "company": "NextGen Tech",
+      "phone": "+65-9876-5432",
+      "email": "sophia.zhang@nextgentech.sg",
+      "country": "Singapore",
+      "status": "Inactive"
+    }
+  ]
+}
