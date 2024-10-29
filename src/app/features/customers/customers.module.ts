@@ -14,6 +14,8 @@ import { MathAbsPipe } from 'src/app/shared/pipes/math-abs.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { SelectComponent } from '../../shared/components/select/select.component';
+import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
+import { EllipseTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { SelectComponent } from '../../shared/components/select/select.component
     MatTooltipModule,
     UserRolePipe,
     SelectComponent,
+    EllipseTextPipe,
   ],
   declarations: [
     CustomersPageComponent,
@@ -34,6 +37,7 @@ import { SelectComponent } from '../../shared/components/select/select.component
     TablePaginationComponent,
     CustomerFiltersSectionComponent,
     PercentageIndicatorComponent,
+    FilterTagComponent,
   ],
 })
 export class CustomersModule {}

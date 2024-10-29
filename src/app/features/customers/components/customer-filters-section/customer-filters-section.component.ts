@@ -5,83 +5,66 @@ import { SelectItem } from 'src/app/shared/models/select-item.interface';
 @Component({
   selector: 'app-customer-filters-section',
   templateUrl: './customer-filters-section.component.html',
-  styleUrls: ['./customer-filters-section.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomerFiltersSectionComponent {
   private notificationService = inject(NotificationService);
   searchInput = '';
 
-  sortOptions: SelectItem[] = [
-    {
-      value: 'name',
-      label: 'Name',
-    },
-    {
-      value: 'status',
-      label: 'Status',
-    },
-    {
-      value: 'country',
-      label: 'Country',
-    },
+  readonly sortOptions: SelectItem[] = [
+    { value: 'name', label: 'Name' },
+    { value: 'status', label: 'Status' },
+    { value: 'country', label: 'Country' },
   ];
 
   tags: string[] = [];
-
-  sortSelected: string = this.sortOptions[0].value;
+  sortSelected = this.sortOptions[0].value;
+  private readonly maxTags = 5;
+  private readonly maxTagLength = 150;
 
   updateSortValue(value: string): void {
     this.sortSelected = value;
   }
 
   addTag(): void {
-    if (this.searchInput.length === 0) {
-      return;
+    if (this.isInputValid()) {
+      this.tags.push(this.searchInput);
+      this.searchInput = '';
     }
-
-    if (this.checkTagExist()) {
-      return;
-    }
-
-    if (this.checkMaximumTagAllowed()) {
-      return;
-    }
-
-    if (this.checkMaximumInputTagSize()) {
-      return;
-    }
-
-    this.tags.push(this.searchInput);
-    this.searchInput = '';
   }
 
-  clickOnTag(tagToRemove: string): void {
-    const newTags = this.tags.filter((item) => item !== tagToRemove);
-    this.tags = newTags;
+  removeTag(tagToRemove: string): void {
+    this.tags = this.tags.filter((tag) => tag !== tagToRemove);
   }
 
-  checkTagExist(): boolean {
-    if (this.tags.find((item) => item === this.searchInput)) {
-      this.notificationService.showNotification('Error duplicate tag: ' + this.searchInput);
-      return true;
+  private isInputValid(): boolean {
+    if (!this.searchInput) return false;
+
+    const validators: Array<[boolean, string]> = [
+      [this.isTagDuplicate(), `Duplicate tag: ${this.searchInput}`],
+      [this.isMaxTagCountReached(), `Maximum tag count reached: ${this.maxTags}`],
+      [this.isTagLengthExceeded(), `Maximum tag length exceeded: ${this.maxTagLength}`],
+    ];
+
+    for (const [isInvalid, message] of validators) {
+      if (isInvalid) {
+        this.notificationService.showNotification(`Error-> ${message}`);
+        return false;
+      }
     }
-    return false;
+
+    return true;
   }
 
-  checkMaximumTagAllowed(): boolean {
-    if (this.tags.length > 5) {
-      this.notificationService.showNotification('Error maximum tag quantity reached: ' + 5);
-      return true;
-    }
-    return false;
+  private isTagDuplicate(): boolean {
+    return this.tags.includes(this.searchInput);
   }
 
-  checkMaximumInputTagSize(): boolean {
-    if (this.searchInput.length > 10) {
-      this.notificationService.showNotification('Error maximum search length string reached: ' + 10);
-      return true;
-    }
-    return false;
+  private isMaxTagCountReached(): boolean {
+    return this.tags.length >= this.maxTags;
+  }
+
+  private isTagLengthExceeded(): boolean {
+    return this.searchInput.length > this.maxTagLength;
   }
 }

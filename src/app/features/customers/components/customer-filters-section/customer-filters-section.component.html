@@ -6,12 +6,7 @@
   <div class="flex space-x-4 h-10">
     <div class="p-2">
       @for(tag of tags; track tag){
-      <button (click)="clickOnTag(tag)">
-        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
-          {{ tag }}
-          <mat-icon svgIcon="cross" class="align-middle tag-icon" />
-        </span>
-      </button>
+      <app-filter-tag [tag]="tag" (onClick)="removeTag($event)" />
       }
     </div>
     <div class="relative">
