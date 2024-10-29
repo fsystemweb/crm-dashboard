@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, DestroyRef, ChangeDetectorRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AppState } from 'src/app/state/app.reducer';
+import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +11,30 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  username = 'Guest';
+  private store: Store<AppState> = inject(Store);
+  private destroyRef = inject(DestroyRef);
+  private ref = inject(ChangeDetectorRef);
 
+  username = '';
   searchInput = '';
+
+  constructor() {
+    this.setUsername();
+  }
+
+  private setUsername(): void {
+    this.store
+      .select(getUserInfo)
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter(({ loadedUserInfo }) => loadedUserInfo)
+      )
+      .subscribe(({ userInfo }) => {
+        if (!userInfo || !userInfo.fullname) {
+          return;
+        }
+        this.username = userInfo.fullname;
+        this.ref.markForCheck();
+      });
+  }
 }

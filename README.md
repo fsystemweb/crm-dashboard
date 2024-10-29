@@ -4,6 +4,7 @@
 
     - Node v20
     - Nx v20
+    - Ngrx
     - Angular v18
     - Tailwind
     - Eslint
@@ -11,6 +12,7 @@
     - Prettier
     - Husky
     - Lint staged
+    - JsonServer (Mock API)
 
     This project was created using Node v20
 
@@ -106,7 +108,10 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 Here’s a list of pending tasks and features to implement:
 
 - [x] Add mock Api.
-- [ ] Add Ngrx.
+- [x] Add Ngrx.
+- [ ] Add Pagination.
+- [ ] Add Sort mock functionality.
+- [ ] Add Filter mock functionality.
 - [ ] Add spinner.
 - [ ] Add Interceptor error handler.
 - [ ] Add sidebar icon chevron.
@@ -115,3 +120,4 @@ Here’s a list of pending tasks and features to implement:
 - [ ] Update readme file.
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
+- [ ] Add real Backend with express using NX monorepo.

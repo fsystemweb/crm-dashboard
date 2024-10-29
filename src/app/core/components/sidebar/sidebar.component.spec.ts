@@ -6,6 +6,9 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { UserPicturePathPipe } from 'src/app/shared/pipes/user-picture-path.pipe';
 import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
+import { provideMockStore } from '@ngrx/store/testing';
+import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
+import { userInfo } from 'os';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -15,7 +18,25 @@ describe('SidebarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SidebarComponent],
       imports: [IconModule, UserPicturePathPipe, UserRolePipe],
-      providers: [provideHttpClient(), provideHttpClientTesting()],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideMockStore({
+          selectors: [
+            {
+              selector: getUserInfo,
+              value: {
+                loadedUserInfo: true,
+                userInfo: {
+                  fullname: 'Alf',
+                  role: 'CEO',
+                  picture: 'alf.jpeg',
+                },
+              },
+            },
+          ],
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SidebarComponent);

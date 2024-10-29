@@ -1,16 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { CoreModule } from './core/core.module';
+
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideMockStore } from '@ngrx/store/testing';
-import { getUserInfo } from './state/entities/user-info/user-info.selectors';
-describe('AppComponent', () => {
+
+import { NavbarComponent } from './navbar.component';
+import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
+import { FormsModule } from '@angular/forms';
+import { IconModule } from 'src/app/shared/components/icons/icon.module';
+describe('NavbarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), CoreModule],
-      declarations: [AppComponent],
+      imports: [FormsModule, IconModule],
+      declarations: [NavbarComponent],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
@@ -34,15 +36,9 @@ describe('AppComponent', () => {
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello Alf');
-  });
-
-  it("should have as title 'crm-dashboard'", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('crm-dashboard');
   });
 });
