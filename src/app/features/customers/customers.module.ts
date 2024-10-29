@@ -16,6 +16,7 @@ import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { SelectComponent } from '../../shared/components/select/select.component';
 import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
 import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
+import { PaginationButtonComponent } from 'src/app/shared/components/pagination-button/pagination-button.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
     UserRolePipe,
     SelectComponent,
     EllipsisTextPipe,
+    PaginationButtonComponent,
   ],
   declarations: [
     CustomersPageComponent,

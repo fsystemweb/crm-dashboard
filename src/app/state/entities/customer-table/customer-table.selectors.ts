@@ -7,7 +7,7 @@ const getCustomerTableState = createFeatureSelector<CustomerTableReducer.Custome
 const getCustomerTable = createSelector(getCustomerTableState, (state: CustomerTableReducer.CustomerTableState) => ({
   loadingCustomerTable: state?.loadingCustomerTable,
   loadedCustomerTable: state?.loadedCustomerTable,
-  customerTable: [...state.customerTable],
+  customerTable: { ...state.customerTable },
   failCustomerTable: state?.failCustomerTable,
 }));
 

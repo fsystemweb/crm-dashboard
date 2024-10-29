@@ -6,6 +6,9 @@ import { AppState } from 'src/app/state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
 import { Customer } from '../../models/customer.interface';
+import { getPagination } from 'src/app/state/entities/pagination/pagination.selectors';
+import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { setPagination } from 'src/app/state/entities/pagination/pagination.actions';
 
 @Component({
   selector: 'app-customer-table',
@@ -20,8 +23,17 @@ export class CustomerTableComponent {
 
   customers: Customer[] = [];
 
+  pagination: Pagination = {
+    page: 0,
+    size: 10,
+  };
+
   constructor() {
-    this.store.dispatch(fetchCustomerTable());
+    this.store.dispatch(
+      fetchCustomerTable({
+        pagination: this.pagination,
+      })
+    );
     this.setCustomerTable();
   }
 
@@ -37,7 +49,13 @@ export class CustomerTableComponent {
           return;
         }
 
-        this.customers = customerTable as Customer[];
+        this.customers = customerTable.customers as Customer[];
+
+        this.store.dispatch(
+          setPagination({
+            pagination: customerTable.pagination as Pagination,
+          })
+        );
 
         this.ref.markForCheck();
 
