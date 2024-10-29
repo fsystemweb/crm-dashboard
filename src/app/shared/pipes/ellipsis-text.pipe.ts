@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'ellipseText',
   standalone: true,
 })
-export class EllipseTextPipe implements PipeTransform {
+export class EllipsisTextPipe implements PipeTransform {
   transform(text: string | undefined, length = 15): string {
     if (!text) {
       return '';
