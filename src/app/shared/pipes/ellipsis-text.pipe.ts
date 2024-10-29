@@ -11,7 +11,7 @@ export class EllipseTextPipe implements PipeTransform {
     }
 
     if (text.length > length) {
-      const substring = text.substring(0, length + 3);
+      const substring = text.substring(0, length - 3);
       return substring + '...';
     }
 
