@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, DestroyRef, OnInit } from '@angular/core';
 import { UserInfo } from 'src/app/shared/models/user-info.interface';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AppState } from 'src/app/core/state/app.reducer';
+import { getUserInfo } from 'src/app/core/state/user-info/user-info.selectors';
+import { fetchUserInfo, savedUserInfo } from 'src/app/core/state/user-info/user-info.actions';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +13,10 @@ import { UserInfo } from 'src/app/shared/models/user-info.interface';
   styleUrls: ['./sidebar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  private store: Store<AppState> = inject(Store);
+  private destroyRef = inject(DestroyRef);
+
   isExpanded = false;
 
   user: UserInfo = {
@@ -16,7 +25,28 @@ export class SidebarComponent {
     picture: 'alf.jpeg',
   };
 
+  ngOnInit(): void {
+    this.store.dispatch(fetchUserInfo());
+    this.setUserInfo();
+  }
+
   toggleSidebar(): void {
     this.isExpanded = !this.isExpanded;
+  }
+
+  private setUserInfo(): void {
+    this.store
+      .select(getUserInfo)
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter(({ loadedUserInfo }) => loadedUserInfo)
+      )
+      .subscribe(({ userInfo }) => {
+        if (!userInfo) {
+          return;
+        }
+        this.user = userInfo as UserInfo;
+        this.store.dispatch(savedUserInfo());
+      });
   }
 }

@@ -4,6 +4,7 @@
 
     - Node v20
     - Nx v20
+    - Ngrx
     - Angular v18
     - Tailwind
     - Eslint
@@ -11,6 +12,7 @@
     - Prettier
     - Husky
     - Lint staged
+    - JsonServer (Mock API)
 
     This project was created using Node v20
 
