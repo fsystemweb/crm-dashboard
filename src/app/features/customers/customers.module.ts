@@ -15,7 +15,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { SelectComponent } from '../../shared/components/select/select.component';
 import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
-import { EllipseTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
+import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
 
 @NgModule({
   imports: [
@@ -28,7 +28,7 @@ import { EllipseTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
     MatTooltipModule,
     UserRolePipe,
     SelectComponent,
-    EllipseTextPipe,
+    EllipsisTextPipe,
   ],
   declarations: [
     CustomersPageComponent,
