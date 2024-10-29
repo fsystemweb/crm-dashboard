@@ -13,6 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { UserInfoEffects } from './state/user-info/user-info.effects';
+import { StatsCardsEffects } from './state/stats-cards/stats-cards.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,7 @@ import { UserInfoEffects } from './state/user-info/user-info.effects';
     AppRoutingModule,
     CommonModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UserInfoEffects]),
+    EffectsModule.forRoot([UserInfoEffects, StatsCardsEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
