@@ -13,9 +13,23 @@ import { UserPicturePathPipe } from 'src/app/shared/pipes/user-picture-path.pipe
 import { MathAbsPipe } from 'src/app/shared/pipes/math-abs.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
+import { SelectComponent } from '../../shared/components/select/select.component';
+import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
+import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
 
 @NgModule({
-  imports: [CustomersRoutingModule, CommonModule, IconModule, FormsModule, UserPicturePathPipe, MathAbsPipe, MatTooltipModule, UserRolePipe],
+  imports: [
+    CustomersRoutingModule,
+    CommonModule,
+    IconModule,
+    FormsModule,
+    UserPicturePathPipe,
+    MathAbsPipe,
+    MatTooltipModule,
+    UserRolePipe,
+    SelectComponent,
+    EllipsisTextPipe,
+  ],
   declarations: [
     CustomersPageComponent,
     StatsCardsComponent,
@@ -23,6 +37,7 @@ import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
     TablePaginationComponent,
     CustomerFiltersSectionComponent,
     PercentageIndicatorComponent,
+    FilterTagComponent,
   ],
 })
 export class CustomersModule {}

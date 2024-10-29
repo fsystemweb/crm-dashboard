@@ -1,0 +1,16 @@
+<div class="relative">
+  <button (click)="toggleDropdown()" class="cursor-pointer bg-gray-100 p-2 rounded-lg text-black font-semibold flex w-40">
+    <span class="text-customGreyFont pr-1">{{ prefix() }}</span>
+    {{ selectedValue.label }}
+    <div class="w-[8px] h-[8px] absolute right-6"><mat-icon svgIcon="chevron-down" /></div>
+  </button>
+  @if(isDropdownOpen){
+  <div class="absolute z-10 bg-white border rounded-lg mt-1 w-40">
+    @for(option of options(); track option){
+    <div (click)="selectOption(option)" class="p-2 hover:bg-gray-200 cursor-pointer">
+      {{ option.label }}
+    </div>
+    }
+  </div>
+  }
+</div>
