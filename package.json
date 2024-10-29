@@ -22,9 +22,10 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "@ngrx/effects": "^18.1.1",
+    "@ngrx/store-devtools": "^18.1.1",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.14.3",
-    "@ngrx/store": "^18.1.0"
+    "zone.js": "~0.14.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~18.2.0",
@@ -36,7 +37,8 @@
     "@angular/cli": "~18.2.0",
     "@angular/compiler-cli": "~18.2.0",
     "@angular/language-service": "~18.2.0",
-    "@ngrx/store": "^18.1.0",
+    "@ngrx/eslint-plugin": "^18.1.0",
+    "@ngrx/store": "^18.1.1",
     "@nx/angular": "20.0.3",
     "@nx/eslint": "20.0.3",
     "@nx/eslint-plugin": "20.0.3",
@@ -70,8 +72,7 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
-    "typescript": "~5.5.2",
-    "@ngrx/eslint-plugin": "^18.1.0"
+    "typescript": "~5.5.2"
   },
   "nx": {
     "includedScripts": []

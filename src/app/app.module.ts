@@ -8,11 +8,11 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StoreModule } from '@ngrx/store';
-import { appReducers } from './core/state/app.reducer';
+import { appReducers } from './state/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { UserInfoEffects } from './core/state/user-info/user-info.effects';
+import { UserInfoEffects } from './state/user-info/user-info.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,11 +23,11 @@ import { UserInfoEffects } from './core/state/user-info/user-info.effects';
     AppRoutingModule,
     CommonModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([UserInfoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([UserInfoEffects]),
     CoreModule,
     MatSnackBarModule,
   ],

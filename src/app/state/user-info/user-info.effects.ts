@@ -10,7 +10,6 @@ import { UserInfo } from 'src/app/shared/models/user-info.interface';
 
 @Injectable()
 export class UserInfoEffects {
-  //constructor(private actions$: Actions, private httpClient: HttpClient){}
   private actions$ = inject(Actions);
   private httpClient = inject(HttpClient);
 
