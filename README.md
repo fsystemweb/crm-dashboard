@@ -108,8 +108,10 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 Here’s a list of pending tasks and features to implement:
 
 - [x] Add mock Api.
-- [ ] Add Ngrx.
+- [x] Add Ngrx.
 - [ ] Add Pagination.
+- [ ] Add Sort mock functionality.
+- [ ] Add Filter mock functionality.
 - [ ] Add spinner.
 - [ ] Add Interceptor error handler.
 - [ ] Add sidebar icon chevron.

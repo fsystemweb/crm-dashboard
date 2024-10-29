@@ -4,7 +4,7 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
-import { saveErrorAction } from '../error/error.actions';
+import { saveErrorAction } from '../../error/error.actions';
 import { failFetchUserInfo, fetchUserInfo, saveUserInfo } from './user-info.actions';
 import { UserInfo } from 'src/app/shared/models/user-info.interface';
 

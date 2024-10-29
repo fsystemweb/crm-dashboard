@@ -4,7 +4,7 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
-import { saveErrorAction } from '../error/error.actions';
+import { saveErrorAction } from '../../error/error.actions';
 import { failFetchStatsCards, fetchStatsCards, saveStatsCards } from './stats-cards.actions';
 import { StatsCards } from 'src/app/features/customers/models/stats-cards.interface';
 

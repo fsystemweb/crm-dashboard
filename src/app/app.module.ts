@@ -12,8 +12,9 @@ import { appReducers } from './state/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { UserInfoEffects } from './state/user-info/user-info.effects';
-import { StatsCardsEffects } from './state/stats-cards/stats-cards.effects';
+import { UserInfoEffects } from './state/entities/user-info/user-info.effects';
+import { StatsCardsEffects } from './state/entities/stats-cards/stats-cards.effects';
+import { CustomerTableEffects } from './state/entities/customer-table/customer-table.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { StatsCardsEffects } from './state/stats-cards/stats-cards.effects';
     AppRoutingModule,
     CommonModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UserInfoEffects, StatsCardsEffects]),
+    EffectsModule.forRoot([UserInfoEffects, StatsCardsEffects, CustomerTableEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
