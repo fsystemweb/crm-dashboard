@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/app/environments/environment';
+import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
 import { saveErrorAction } from '../error/error.actions';
 import { failFetchUserInfo, fetchUserInfo, saveUserInfo } from './user-info.actions';

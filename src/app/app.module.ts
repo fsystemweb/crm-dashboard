@@ -10,7 +10,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './core/state/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from './environments/environment';
+import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { UserInfoEffects } from './core/state/user-info/user-info.effects';
 
