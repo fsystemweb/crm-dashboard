@@ -1,44 +1,50 @@
-import { TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ToolbarComponent } from './toolbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
+import { IconModule } from 'src/app/shared/components/icons/icon.module';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { provideMockStore } from '@ngrx/store/testing';
 
-import { NavbarComponent } from './toolbar.component';
-import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
-import { FormsModule } from '@angular/forms';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
-describe('NavbarComponent', () => {
+describe('ToolbarComponent', () => {
+  let component: ToolbarComponent;
+  let fixture: ComponentFixture<ToolbarComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, IconModule],
-      declarations: [NavbarComponent],
-      providers: [
-        provideHttpClient(),
-        provideHttpClientTesting(),
-        provideMockStore({
-          selectors: [
-            {
-              selector: getUserInfo,
-              value: {
-                loadedUserInfo: true,
-                userInfo: {
-                  fullname: 'Alf',
-                  role: 'CEO',
-                  picture: 'alf.jpeg',
-                },
-              },
-            },
-          ],
-        }),
-      ],
+      declarations: [ToolbarComponent],
+      imports: [BrowserAnimationsModule, IconModule],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(ToolbarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(NavbarComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello Alf');
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should initialize with isExpanded as false', () => {
+    expect(component.isExpanded).toBe(false);
+  });
+
+  it('should toggle isExpanded when toggleToolbar is called', () => {
+    component.toggleToolbar();
+    expect(component.isExpanded).toBe(true);
+
+    component.toggleToolbar();
+    expect(component.isExpanded).toBe(false);
+  });
+
+  it('should set isExpanded to false when closeToolbar is called', () => {
+    component.isExpanded = true;
+    component.closeToolbar();
+    expect(component.isExpanded).toBe(false);
+  });
+
+  it('should have the correct number of menu items', () => {
+    expect(component.menuItems.length).toBe(6);
   });
 });

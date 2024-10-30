@@ -7,8 +7,8 @@
     </div>
 
     @if(isExpanded){
-    <div class="relative mt-2">
-      <div class="absolute z-10 bg-white rounded-md p-2 w-48 border-[1px] border-gray-300">
+    <div class="relative mt-2" @fadeInOut>
+      <div class="absolute z-10 bg-white rounded-md p-2 w-48 border-[1px] border-gray-300" @fadeInOut>
         @for (menuItem of menuItems; track menuItem.title) {
         <a
           (click)="closeToolbar()"

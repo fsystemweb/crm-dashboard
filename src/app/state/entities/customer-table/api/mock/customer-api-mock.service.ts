@@ -21,7 +21,10 @@ export class CustomerApiMockService {
     if (pagination.sort) {
       mockCustomers = this.sortData(pagination.sort, mockCustomers);
     }
-    mockCustomers = this.paginateData(pagination, mockCustomers);
+
+    if (totalElementsCopy[0] > pagination.size) {
+      mockCustomers = this.paginateData(pagination, mockCustomers);
+    }
 
     const mockPagination = this.createMockPagination(pagination, totalElementsCopy[0]);
 
