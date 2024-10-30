@@ -1,8 +1,9 @@
 <div class="relative">
-  <button (click)="toggleDropdown()" class="cursor-pointer bg-gray-100 p-2 rounded-lg text-black font-semibold flex w-[202px] md:w-40 lg:40">
+  <button (click)="toggleDropdown()"
+    class="cursor-pointer bg-gray-100 p-2 rounded-lg text-black font-semibold flex w-[95%] max-w-[308px] md:w-40 lg:40">
     <span class="text-customGreyFont pr-1">{{ prefix() }}</span>
     {{ selectedValue.label }}
-    <div class="w-[8px] h-[8px] absolute right-6"><mat-icon svgIcon="chevron-down" /></div>
+    <div class="w-[8px] h-[8px] ml-auto mr-2"><mat-icon svgIcon="chevron-down" /></div>
   </button>
   @if(isDropdownOpen){
   <div class="absolute z-10 bg-white border rounded-lg mt-1 w-40">

@@ -1,4 +1,4 @@
-<div class="justify-around bg-white p-8 rounded-[30px] shadow-sm grid md:grid lg:flex">
+<div class="justify-around bg-white p-4 md:p-6 lg:p-8  rounded-[30px] shadow-sm grid md:grid lg:flex">
   <!-- Total Customers -->
   <div class="grid md:grid-cols-2 lg:grid-cols-2">
     <div class="mr-6 hidden md:block lg:block">
@@ -42,10 +42,7 @@
       <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive | number }}</p>
       <div class="flex mt-2">
         @for (user of statsCards.userActives; track user.fullname) {
-        <img
-          [src]="user.picture | userPicture"
-          [alt]="user.fullname"
-          [matTooltip]="user | userRole"
+        <img [src]="user.picture | userPicture" [alt]="user.fullname" [matTooltip]="user | userRole"
           class="w-6 h-6 rounded-full border-2 border-white -ml-2 cursor-pointer" />
         }
       </div>

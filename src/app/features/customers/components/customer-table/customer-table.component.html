@@ -1,6 +1,6 @@
 <app-spinner-overlay [displayProgressSpinner]="(loading$ | async) ?? false" />
 
-<div class="bg-white p-12 rounded-[30px] shadow-sm mt-11">
+<div class="bg-white p-4 md:p-6 lg:p-12 rounded-[30px] shadow-sm mt-11">
   <app-customer-filters-section (onSortChange)="updateSort($event)" (onFilterTagsChange)="updateTags($event)" />
   <div class="overflow-x-auto mt-48 md:mt-24 lg:mt-0">
     <table class="min-w-full">
