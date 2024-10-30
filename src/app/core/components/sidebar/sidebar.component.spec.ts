@@ -9,6 +9,7 @@ import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { provideMockStore } from '@ngrx/store/testing';
 import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
 import { userInfo } from 'os';
+import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinner-overlay/spinner-overlay.component';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -17,7 +18,7 @@ describe('SidebarComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SidebarComponent],
-      imports: [IconModule, UserPicturePathPipe, UserRolePipe],
+      imports: [IconModule, UserPicturePathPipe, UserRolePipe, SpinnerOverlayComponent],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),

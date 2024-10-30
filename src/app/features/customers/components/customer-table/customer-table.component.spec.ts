@@ -19,6 +19,7 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 import { IconModule } from 'src/app/shared/components/icons/icon.module';
 import { CustomerStatusComponent } from '../customer-status/customer-status.component';
+import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinner-overlay/spinner-overlay.component';
 describe('CustomerTableComponent', () => {
   let component: CustomerTableComponent;
   let fixture: ComponentFixture<CustomerTableComponent>;
@@ -28,7 +29,7 @@ describe('CustomerTableComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CustomerTableComponent, CustomerFiltersSectionComponent, CustomerStatusComponent],
       providers: [provideHttpClient(), provideHttpClientTesting(), provideMockStore({})],
-      imports: [TablePaginationComponent, SelectComponent, FormsModule, IconModule],
+      imports: [TablePaginationComponent, SelectComponent, FormsModule, IconModule, SpinnerOverlayComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CustomerTableComponent);

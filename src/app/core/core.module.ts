@@ -9,9 +9,20 @@ import { FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserPicturePathPipe } from '../shared/pipes/user-picture-path.pipe';
 import { UserRolePipe } from '../shared/pipes/user-role.pipe';
+import { SpinnerOverlayComponent } from '../shared/components/spinner/spinner-overlay/spinner-overlay.component';
 
 @NgModule({
-  imports: [RouterModule, RouterLinkWithHref, CommonModule, IconModule, FormsModule, MatTooltipModule, UserPicturePathPipe, UserRolePipe],
+  imports: [
+    RouterModule,
+    RouterLinkWithHref,
+    CommonModule,
+    IconModule,
+    FormsModule,
+    MatTooltipModule,
+    UserPicturePathPipe,
+    UserRolePipe,
+    SpinnerOverlayComponent,
+  ],
   declarations: [NavbarComponent, SidebarComponent, LayoutComponent],
   exports: [NavbarComponent, SidebarComponent, LayoutComponent],
   providers: [],

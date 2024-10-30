@@ -1,3 +1,5 @@
+<app-spinner-overlay [displayProgressSpinner]="(loading$ | async) ?? false" />
+
 <div class="bg-white p-12 rounded-[30px] shadow-sm mt-11">
   <app-customer-filters-section (onSortChange)="updateSort($event)" (onFilterTagsChange)="updateTags($event)" />
 

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, DestroyRef } from '@angular/core';
 import { UserInfo } from 'src/app/shared/models/user-info.interface';
 import { Store } from '@ngrx/store';
-import { filter } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AppState } from 'src/app/state/app.reducer';
 import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
-import { fetchUserInfo } from 'src/app/state/entities/user-info/user-info.actions';
+import { fetchUserInfo, savedUserInfo } from 'src/app/state/entities/user-info/user-info.actions';
 
 @Component({
   selector: 'app-sidebar',
@@ -24,6 +24,8 @@ export class SidebarComponent {
     role: '',
     picture: '',
   };
+
+  loading$: Observable<boolean> = this.store.select(getUserInfo).pipe(map(({ loadingUserInfo }) => loadingUserInfo));
 
   constructor() {
     this.store.dispatch(fetchUserInfo());
@@ -47,6 +49,8 @@ export class SidebarComponent {
         }
 
         this.user = userInfo as UserInfo;
+
+        this.store.dispatch(savedUserInfo());
       });
   }
 }

@@ -112,7 +112,7 @@ Here’s a list of pending tasks and features to implement:
 - [x] Add Pagination.
 - [x] Add Sort mock functionality.
 - [x] Add Filter mock functionality.
-- [ ] Add spinner.
+- [x] Add spinner.
 - [ ] Add Interceptor error handler.
 - [ ] Add sidebar icon chevron.
 - [ ] Add stat piper miles separator.
