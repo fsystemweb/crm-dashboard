@@ -111,7 +111,7 @@ Here’s a list of pending tasks and features to implement:
 - [x] Add Ngrx.
 - [x] Add Pagination.
 - [x] Add Sort mock functionality.
-- [ ] Add Filter mock functionality.
+- [x] Add Filter mock functionality.
 - [ ] Add spinner.
 - [ ] Add Interceptor error handler.
 - [ ] Add sidebar icon chevron.
