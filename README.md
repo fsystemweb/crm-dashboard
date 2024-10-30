@@ -111,7 +111,7 @@ Here’s a list of pending tasks and features to implement:
 - [x] Add Ngrx.
 - [x] Add Pagination.
 - [x] Add Sort mock functionality.
-- [ ] Add Filter mock functionality.
+- [x] Add Filter mock functionality.
 - [ ] Add spinner.
 - [ ] Add Interceptor error handler.
 - [ ] Add sidebar icon chevron.
@@ -121,3 +121,4 @@ Here’s a list of pending tasks and features to implement:
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
 - [ ] Add real Backend with express using NX monorepo.
+- [ ] Add e2e with Cypress.

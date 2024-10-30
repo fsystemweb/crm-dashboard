@@ -31,6 +31,8 @@ export class CustomerTableComponent {
     },
   };
 
+  filterTags: string[] = [];
+
   constructor() {
     this.fetchCustomerTable();
     this.setCustomerTable();
@@ -50,6 +52,12 @@ export class CustomerTableComponent {
     const newPagination = { ...this.pagination };
     newPagination.sort = sort;
     this.pagination = newPagination;
+    this.ref.markForCheck();
+    this.fetchCustomerTable();
+  }
+
+  updateTags(tags: string[]): void {
+    this.filterTags = tags;
     this.ref.markForCheck();
     this.fetchCustomerTable();
   }
@@ -83,6 +91,7 @@ export class CustomerTableComponent {
   private fetchCustomerTable(): void {
     this.store.dispatch(
       fetchCustomerTable({
+        filterTags: this.filterTags,
         pagination: this.pagination,
       })
     );

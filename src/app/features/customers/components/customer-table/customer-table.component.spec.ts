@@ -44,7 +44,7 @@ describe('CustomerTableComponent', () => {
 
   it('should dispatch fetchCustomerTable action', () => {
     (component as any).fetchCustomerTable();
-    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: component.pagination }));
+    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: component.pagination, filterTags: [] }));
   });
 
   it('should update pagination, fetch data on updatePagination', () => {
@@ -53,14 +53,21 @@ describe('CustomerTableComponent', () => {
     component.updatePagination(newPagination);
 
     expect(component.pagination).toEqual(newPagination);
-    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: newPagination }));
+    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: newPagination, filterTags: [] }));
   });
 
   it('should update sorting, fetch data on updateSort', () => {
     component.updateSort('customerName');
 
     expect(component.pagination.sort).toEqual({ property: 'customerName', direction: 'ASC' });
-    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: component.pagination }));
+    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: component.pagination, filterTags: [] }));
+  });
+
+  it('should update filterTags, fetch data on updateTags', () => {
+    component.updateTags(['canada']);
+
+    expect(component.pagination.sort).toEqual({ property: 'customerName', direction: 'ASC' });
+    expect(store.dispatch).toHaveBeenCalledWith(fetchCustomerTable({ pagination: component.pagination, filterTags: ['canada'] }));
   });
 
   it('should not update customers if customer table data is not loaded', () => {
