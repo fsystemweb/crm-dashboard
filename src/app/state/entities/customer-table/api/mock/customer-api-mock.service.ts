@@ -11,9 +11,11 @@ export class CustomerApiMockService {
 
   createMockResponse(pagination: Pagination, filterTags: string[] | undefined, customerTable: Customer[]): CustomerTableResponse {
     let mockCustomers = customerTable;
+    let totalElementsCopy = [...[customerTable.length]];
 
     if (filterTags && filterTags.length > 0) {
       mockCustomers = this.filterByStrings(mockCustomers, filterTags);
+      totalElementsCopy = [...[mockCustomers.length]];
     }
 
     if (pagination.sort) {
@@ -21,7 +23,7 @@ export class CustomerApiMockService {
     }
     mockCustomers = this.paginateData(pagination, mockCustomers);
 
-    const mockPagination = this.createMockPagination(pagination, customerTable.length);
+    const mockPagination = this.createMockPagination(pagination, totalElementsCopy[0]);
 
     const customerTableResponse: CustomerTableResponse = new CustomerTableResponse(mockCustomers, mockPagination);
 
