@@ -121,3 +121,4 @@ Here’s a list of pending tasks and features to implement:
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
 - [ ] Add real Backend with express using NX monorepo.
+- [ ] Add e2e with Cypress.
