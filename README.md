@@ -114,11 +114,12 @@ Here’s a list of pending tasks and features to implement:
 - [x] Add Filter mock functionality.
 - [x] Add spinner.
 - [x] Add Interceptor error handler.
-- [ ] Add sidebar icon chevron.
-- [ ] Add stat piper miles separator.
+- [x] Add sidebar icon chevron.
+- [x] Add stat piper miles separator.
 - [ ] Add Fix mobile view.
 - [ ] Update readme file.
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
 - [ ] Add real Backend with express using NX monorepo.
 - [ ] Add e2e with Cypress.
+- [ ] Add Icomoon project ot handle all the icons.

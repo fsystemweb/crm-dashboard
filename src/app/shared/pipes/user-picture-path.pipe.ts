@@ -9,7 +9,7 @@ const userPathFolder = '/images/users/';
 class UserPicturePathPipe implements PipeTransform {
   transform(picture: string): string {
     if (!picture) {
-      return '';
+      return userPathFolder + 'blank-user.png';
     }
 
     return userPathFolder + picture;
