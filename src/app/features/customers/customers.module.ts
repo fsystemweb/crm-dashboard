@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersPageComponent } from './page/customers-page.component';
 import { StatsCardsComponent } from './components/stats-cards/stats-cards.component';
@@ -33,6 +33,7 @@ import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinn
     EllipsisTextPipe,
     TablePaginationComponent,
     SpinnerOverlayComponent,
+    DecimalPipe,
   ],
   declarations: [
     CustomersPageComponent,
