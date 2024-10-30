@@ -1,0 +1,26 @@
+<div class="lg:hidden">
+  <div class="w-10 pb-2">
+    <div class="bg-white shadow-md rounded-lg p-2 flex justify-between items-center">
+      <button class="flex items-center" (click)="toggleToolbar()" matTooltip="CRM - Toolbar" matTooltipPosition="right">
+        <mat-icon alt="Dashboard logo" class="w-10 h-10" svgIcon="logo" />
+      </button>
+    </div>
+
+    @if(isExpanded){
+    <div class="relative mt-2" @fadeInOut>
+      <div class="absolute z-10 bg-white rounded-md p-2 w-48 border-[1px] border-gray-300" @fadeInOut>
+        @for (menuItem of menuItems; track menuItem.title) {
+        <a
+          (click)="closeToolbar()"
+          (toggle)="closeToolbar()"
+          [routerLink]="menuItem.route"
+          class="bg-gray-100 w-44 rounded-md m-0.5 inline-flex items-center">
+          <mat-icon class="w-6 h-6 m-2 ml-[9px]" [svgIcon]="menuItem.icon" />
+          <span class="menu-text">{{ menuItem.title }}</span>
+        </a>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>

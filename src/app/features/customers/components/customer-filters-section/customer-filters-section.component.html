@@ -1,12 +1,12 @@
-<div class="flex justify-between mb-4">
+<div class="justify-between mb-4 md:flex lg:flex">
   <div>
     <h2 class="text-2xl font-semibold">All Customers</h2>
     @if(tags.length === 1 && tags[0].toLowerCase() === 'active'){
     <span class="text-green-500">Active members</span>
     }
   </div>
-  <div class="flex space-x-4 h-10">
-    <div class="p-2">
+  <div class="h-12 md:h-10 md:space-x-4 md:flex lg:h-10 lg:space-x-4 lg:flex">
+    <div class="p-2 md:hidden lg:block">
       @for(tag of tags; track tag){
       <app-filter-tag [tag]="tag" (onClick)="removeTag($event)" />
       }
@@ -21,7 +21,15 @@
       @if(searchInput.length === 0){
       <mat-icon class="absolute top-2 left-2 w-5 h-5 text-gray-500" svgIcon="search" />
       }
+
+      <div class="p-2 hidden md:block lg:hidden">
+        @for(tag of tags; track tag){
+        <app-filter-tag [tag]="tag" (onClick)="removeTag($event)" />
+        }
+      </div>
     </div>
-    <app-select [options]="sortOptions" (selectionChange)="updateSortValue($event)" prefix="Sort By: " />
+    <div class="mt-2 md:mt-0 lg:mt-0">
+      <app-select [options]="sortOptions" (selectionChange)="updateSortValue($event)" prefix="Sort By: " />
+    </div>
   </div>
 </div>

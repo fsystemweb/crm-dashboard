@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterLinkWithHref, RouterModule } from '@angular/router';
 import { IconModule } from '../shared/components/icons/icon.module';
@@ -11,6 +10,8 @@ import { UserPicturePathPipe } from '../shared/pipes/user-picture-path.pipe';
 import { UserRolePipe } from '../shared/pipes/user-role.pipe';
 import { SpinnerOverlayComponent } from '../shared/components/spinner/spinner-overlay/spinner-overlay.component';
 import { ErrorHandlerService } from './services/error-handler.service';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { ErrorHandlerService } from './services/error-handler.service';
     UserRolePipe,
     SpinnerOverlayComponent,
   ],
-  declarations: [NavbarComponent, SidebarComponent, LayoutComponent],
+  declarations: [NavbarComponent, SidebarComponent, LayoutComponent, ToolbarComponent],
   exports: [NavbarComponent, SidebarComponent, LayoutComponent],
   providers: [ErrorHandlerService],
 })

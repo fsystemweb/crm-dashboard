@@ -10,6 +10,8 @@ This project was created using **Angular 18** and incorporates the latest Angula
 
 Our architecture follows a **feature module** approach with **lazy loading** for enhanced modularity and performance. All shared components are standalone, combining the advantages of feature modules and standalone components, which streamline development and reduce dependencies.
 
+I followed mobile first for the styling
+
 ## State Management
 
 For state handling, we use **NgRx**. Although services could handle state management for a project of this size, NgRx was implemented to showcase a single, immutable app state that simplifies component communication. This setup is beneficial for scaling and maintaining a clear, unified state across the app.
@@ -38,6 +40,7 @@ All sorting, pagination, and filtering of data are handled by a mock frontend se
     - Nx v20
     - Ngrx
     - Angular v18
+    - Angular Material 18
     - Tailwind
     - Eslint
     - Jest
@@ -139,17 +142,6 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 
 Here’s a list of pending tasks and features to implement:
 
-- [x] Add mock Api.
-- [x] Add Ngrx.
-- [x] Add Pagination.
-- [x] Add Sort mock functionality.
-- [x] Add Filter mock functionality.
-- [x] Add spinner.
-- [x] Add Interceptor error handler.
-- [x] Add sidebar icon chevron.
-- [x] Add stat piper miles separator.
-- [x] Update readme file.
-- [ ] Add Fix mobile view.
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
 - [ ] Add real Backend with express using NX monorepo.
