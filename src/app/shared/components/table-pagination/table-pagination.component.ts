@@ -4,11 +4,14 @@ import { Store } from '@ngrx/store';
 import { Pagination } from 'src/app/shared/models/pagination.interface';
 import { AppState } from 'src/app/state/app.reducer';
 import { getPagination } from 'src/app/state/entities/pagination/pagination.selectors';
+import { PaginationButtonComponent } from '../pagination-button/pagination-button.component';
 
 @Component({
   selector: 'app-table-pagination',
   templateUrl: './table-pagination.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [PaginationButtonComponent],
 })
 export class TablePaginationComponent {
   private store: Store<AppState> = inject(Store);

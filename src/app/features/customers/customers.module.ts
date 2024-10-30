@@ -6,7 +6,7 @@ import { StatsCardsComponent } from './components/stats-cards/stats-cards.compon
 import { IconModule } from 'src/app/shared/components/icons/icon.module';
 import { CustomerTableComponent } from './components/customer-table/customer-table.component';
 import { FormsModule } from '@angular/forms';
-import { TablePaginationComponent } from './components/table-pagination/table-pagination.component';
+import { TablePaginationComponent } from '../../shared/components/table-pagination/table-pagination.component';
 import { CustomerFiltersSectionComponent } from './components/customer-filters-section/customer-filters-section.component';
 import { PercentageIndicatorComponent } from './components/percentage-indicator/percentage-indicator.component';
 import { UserPicturePathPipe } from 'src/app/shared/pipes/user-picture-path.pipe';
@@ -16,7 +16,6 @@ import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { SelectComponent } from '../../shared/components/select/select.component';
 import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
 import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
-import { PaginationButtonComponent } from 'src/app/shared/components/pagination-button/pagination-button.component';
 
 @NgModule({
   imports: [
@@ -30,13 +29,12 @@ import { PaginationButtonComponent } from 'src/app/shared/components/pagination-
     UserRolePipe,
     SelectComponent,
     EllipsisTextPipe,
-    PaginationButtonComponent,
+    TablePaginationComponent,
   ],
   declarations: [
     CustomersPageComponent,
     StatsCardsComponent,
     CustomerTableComponent,
-    TablePaginationComponent,
     CustomerFiltersSectionComponent,
     PercentageIndicatorComponent,
     FilterTagComponent,

@@ -7,7 +7,6 @@ import {
   saveCustomerTable,
   savedCustomerTable,
 } from './customer-table.actions';
-import { Customer } from 'src/app/features/customers/models/customer.interface';
 import { CustomerTableResponse } from './api/customer-table-response';
 
 interface CustomerTableState {

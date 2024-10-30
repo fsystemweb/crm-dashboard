@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { Customer } from 'src/app/features/customers/models/customer.interface';
 import { CustomerTableRequest } from './api/customer-table-request';
 import { CustomerTableResponse } from './api/customer-table-response';
 

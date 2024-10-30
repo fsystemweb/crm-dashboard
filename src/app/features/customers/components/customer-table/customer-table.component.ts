@@ -6,7 +6,6 @@ import { AppState } from 'src/app/state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
 import { Customer } from '../../models/customer.interface';
-import { getPagination } from 'src/app/state/entities/pagination/pagination.selectors';
 import { Pagination } from 'src/app/shared/models/pagination.interface';
 import { setPagination } from 'src/app/state/entities/pagination/pagination.actions';
 
