@@ -12,6 +12,7 @@ export class CustomerFiltersSectionComponent {
   searchInput = '';
 
   onSortChange = output<string>();
+  onFilterTagsChange = output<string[]>();
 
   readonly sortOptions: SelectItem[] = [
     { value: 'customerName', label: 'Name' },
@@ -31,13 +32,18 @@ export class CustomerFiltersSectionComponent {
 
   addTag(): void {
     if (this.isInputValid()) {
-      this.tags.push(this.searchInput);
+      const tagsCopy = [...this.tags];
+      tagsCopy.push(this.searchInput);
+      this.tags = tagsCopy;
+
       this.searchInput = '';
+      this.emitEvent();
     }
   }
 
   removeTag(tagToRemove: string): void {
     this.tags = this.tags.filter((tag) => tag !== tagToRemove);
+    this.emitEvent();
   }
 
   private isInputValid(): boolean {
@@ -69,5 +75,8 @@ export class CustomerFiltersSectionComponent {
 
   private isTagLengthExceeded(): boolean {
     return this.searchInput.length > this.maxTagLength;
+  }
+  private emitEvent(): void {
+    this.onFilterTagsChange.emit(this.tags);
   }
 }

@@ -9,10 +9,15 @@ import { CustomerTableResponse } from '../customer-table-response';
 export class CustomerApiMockService {
   // TODO: This Service is just for demo purposes. We should get rid of this when we connect this App with a proper API, json-server only retrieves static data
 
-  createMockResponse(pagination: Pagination, customerTable: Customer[]): CustomerTableResponse {
+  createMockResponse(pagination: Pagination, filterTags: string[] | undefined, customerTable: Customer[]): CustomerTableResponse {
     let mockCustomers = customerTable;
+
+    if (filterTags && filterTags.length > 0) {
+      mockCustomers = this.filterByStrings(mockCustomers, filterTags);
+    }
+
     if (pagination.sort) {
-      mockCustomers = this.sortData(pagination.sort, customerTable);
+      mockCustomers = this.sortData(pagination.sort, mockCustomers);
     }
     mockCustomers = this.paginateData(pagination, mockCustomers);
 
@@ -37,6 +42,17 @@ export class CustomerApiMockService {
     });
 
     return sortedData;
+  }
+
+  // eslint-disable-next-line
+  private filterByStrings(data: any[], searchStrings: string[]): Customer[] {
+    const lowerCaseSearchStrings = searchStrings.map((str) => str.toLowerCase());
+
+    return data.filter((item) => {
+      return lowerCaseSearchStrings.every((searchString) => {
+        return Object.values(item).some((value) => String(value).toLowerCase().includes(searchString));
+      });
+    });
   }
 
   private paginateData(pagination: Pagination, data: Customer[]): Customer[] {

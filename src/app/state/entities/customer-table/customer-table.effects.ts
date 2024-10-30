@@ -20,11 +20,11 @@ export class CustomerTableEffects {
     this.actions$.pipe(
       ofType(fetchCustomerTable),
       switchMap((action) =>
-        this.httpClient.get(`${environment.apiUrl}/customers`, { params: this.createQueryParams(action.pagination) }).pipe(
+        this.httpClient.get(`${environment.apiUrl}/customers`, { params: this.createQueryParams(action.pagination, action.filterTags) }).pipe(
           map((response) => {
             const customerTable = response as Customer[];
 
-            const customerTableResponse = this.customerApiMockService.createMockResponse(action.pagination, customerTable);
+            const customerTableResponse = this.customerApiMockService.createMockResponse(action.pagination, action.filterTags, customerTable);
 
             return saveCustomerTable({
               customerTable: customerTableResponse,
@@ -36,15 +36,22 @@ export class CustomerTableEffects {
     )
   );
 
-  private createQueryParams(pagination: Pagination): HttpParams {
+  private createQueryParams(pagination: Pagination, filterTags: string[] | undefined): HttpParams {
     let httpParams = new HttpParams();
+    if (filterTags && filterTags.length > 0) {
+      httpParams = httpParams.set('filterTags', filterTags.join(','));
+    }
+    httpParams = this.getHttpParamsWithPagination(httpParams, pagination);
+    return httpParams;
+  }
+
+  private getHttpParamsWithPagination(httpParams: HttpParams, pagination: Pagination): HttpParams {
     httpParams = httpParams.set('page', pagination.page);
     httpParams = httpParams.set('size', pagination.size);
 
     if (pagination.sort) {
       httpParams = httpParams.set('sort', `${pagination.sort.property},${pagination.sort.direction}`);
     }
-
     return httpParams;
   }
 }
