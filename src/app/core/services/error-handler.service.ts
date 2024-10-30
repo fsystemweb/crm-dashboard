@@ -20,7 +20,7 @@ export class ErrorHandlerService {
       .select(getErrors)
       .pipe(
         takeUntilDestroyed(this.destroyRef),
-        debounceTime(2000),
+        debounceTime(400),
         distinctUntilChanged((prev, curr) => isEqual(prev, curr))
       )
       .subscribe((error) => {
