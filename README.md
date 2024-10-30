@@ -10,7 +10,7 @@ This project was created using **Angular 18** and incorporates the latest Angula
 
 Our architecture follows a **feature module** approach with **lazy loading** for enhanced modularity and performance. All shared components are standalone, combining the advantages of feature modules and standalone components, which streamline development and reduce dependencies.
 
-I followed mobile first for the styling
+Additionally, the styling follows a **mobile-first** approach to ensure optimal responsiveness across devices.
 
 ## State Management
 
