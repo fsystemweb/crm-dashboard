@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserPicturePathPipe } from '../shared/pipes/user-picture-path.pipe';
 import { UserRolePipe } from '../shared/pipes/user-role.pipe';
 import { SpinnerOverlayComponent } from '../shared/components/spinner/spinner-overlay/spinner-overlay.component';
+import { ErrorHandlerService } from './services/error-handler.service';
 
 @NgModule({
   imports: [
@@ -25,6 +26,10 @@ import { SpinnerOverlayComponent } from '../shared/components/spinner/spinner-ov
   ],
   declarations: [NavbarComponent, SidebarComponent, LayoutComponent],
   exports: [NavbarComponent, SidebarComponent, LayoutComponent],
-  providers: [],
+  providers: [ErrorHandlerService],
 })
-export class CoreModule {}
+export class CoreModule {
+  constructor(private errorHandlerService: ErrorHandlerService) {
+    errorHandlerService.monitorErrorChanges();
+  }
+}
