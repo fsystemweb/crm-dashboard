@@ -25,6 +25,10 @@ export class CustomerTableComponent {
   pagination: Pagination = {
     page: 0,
     size: 10,
+    sort: {
+      property: 'customerName',
+      direction: 'ASC',
+    },
   };
 
   constructor() {
