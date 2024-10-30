@@ -18,6 +18,12 @@ For state handling, we use **NgRx**. Although services could handle state manage
 
 To optimize performance, all components use `ChangeDetectionStrategy.OnPush`, minimizing unnecessary change detection cycles and improving rendering efficiency.
 
+## Api
+
+For the API, I'm using **json-server**, which serves static data at the URL `localhost:3000/`. This server starts simultaneously with the Angular server when you run `npm run start`.
+
+All sorting, pagination, and filtering of data are handled by a mock frontend service for demonstration purposes. A short delay is also added to simulate loading and display a global spinner, giving the user a clear loading experience.
+
 ## Extra
 
 - Please review the section **"Pre-commit Hook"** to understand the coding standards we follow. Additional rules and best practices are enforced with **ESLint**, which you can reference in the ESLint configuration file for specific rules used to eliminate code smells.
