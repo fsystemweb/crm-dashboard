@@ -6,7 +6,7 @@ import { AppState } from 'src/app/state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
 import { Customer } from '../../models/customer.interface';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { Pagination, PaginationSort } from 'src/app/shared/models/pagination.interface';
 import { setPagination } from 'src/app/state/entities/pagination/pagination.actions';
 
 @Component({
@@ -34,6 +34,18 @@ export class CustomerTableComponent {
 
   updatePagination(pagination: Pagination): void {
     this.pagination = pagination;
+    this.ref.markForCheck();
+    this.fetchCustomerTable();
+  }
+
+  updateSort(property: string): void {
+    const sort: PaginationSort = {
+      property: property,
+      direction: 'ASC',
+    };
+    const newPagination = { ...this.pagination };
+    newPagination.sort = sort;
+    this.pagination = newPagination;
     this.ref.markForCheck();
     this.fetchCustomerTable();
   }

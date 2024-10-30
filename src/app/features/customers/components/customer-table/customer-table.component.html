@@ -1,5 +1,5 @@
 <div class="bg-white p-12 rounded-[30px] shadow-sm mt-11">
-  <app-customer-filters-section />
+  <app-customer-filters-section (onSortChange)="updateSort($event)" />
 
   <div class="customer-body-table"></div>
   <table class="min-w-full table-auto">
