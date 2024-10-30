@@ -37,11 +37,24 @@ export class TablePaginationComponent {
     return endIndex;
   }
 
-  paginationEvent(pageNumber: string): void {
+  paginationEvent(pageSelected: string): void {
     const newPagination = { ...this.pagination };
-    // TODO: Cast page
-    newPagination.page = Number(pageNumber) - 1;
-    this.pagination = newPagination;
+    let pageNumber = 0;
+
+    if (pageSelected === '<') {
+      pageNumber = this.pagination.page - 1;
+    }
+
+    if (pageSelected === '>') {
+      pageNumber = this.pagination.page + 1;
+    }
+
+    if (pageSelected !== '<' && pageSelected !== '>') {
+      pageNumber = Number(pageSelected) - 1;
+    }
+
+    newPagination.page = pageNumber;
+    this.refreshPagination(newPagination);
   }
 
   private setPagination(): void {
