@@ -6,7 +6,6 @@ import { AppState } from 'src/app/state/app.reducer';
 import { getErrors } from 'src/app/state/error/error.selector';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { distinctUntilChanged } from 'rxjs/internal/operators/distinctUntilChanged';
-import { isEqual } from 'lodash';
 import { debounceTime } from 'rxjs';
 
 @Injectable()
@@ -21,7 +20,7 @@ export class ErrorHandlerService {
       .pipe(
         takeUntilDestroyed(this.destroyRef),
         debounceTime(400),
-        distinctUntilChanged((prev, curr) => isEqual(prev, curr))
+        distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
       )
       .subscribe((error) => {
         if (!error) {
