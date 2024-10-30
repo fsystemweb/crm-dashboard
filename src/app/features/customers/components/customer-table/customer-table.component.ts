@@ -28,12 +28,14 @@ export class CustomerTableComponent {
   };
 
   constructor() {
-    this.store.dispatch(
-      fetchCustomerTable({
-        pagination: this.pagination,
-      })
-    );
+    this.fetchCustomerTable();
     this.setCustomerTable();
+  }
+
+  updatePagination(pagination: Pagination): void {
+    this.pagination = pagination;
+    this.ref.markForCheck();
+    this.fetchCustomerTable();
   }
 
   private setCustomerTable(): void {
@@ -60,5 +62,13 @@ export class CustomerTableComponent {
 
         this.store.dispatch(savedCustomerTable());
       });
+  }
+
+  private fetchCustomerTable(): void {
+    this.store.dispatch(
+      fetchCustomerTable({
+        pagination: this.pagination,
+      })
+    );
   }
 }

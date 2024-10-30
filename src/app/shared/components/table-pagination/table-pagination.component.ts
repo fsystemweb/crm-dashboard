@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject, output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
 import { Pagination } from 'src/app/shared/models/pagination.interface';
@@ -17,6 +17,8 @@ export class TablePaginationComponent {
   private store: Store<AppState> = inject(Store);
   private destroyRef = inject(DestroyRef);
   private ref = inject(ChangeDetectorRef);
+
+  onPageChange = output<Pagination>();
 
   totalPages = 0;
   pagesArray: number[] = [];
@@ -58,6 +60,7 @@ export class TablePaginationComponent {
 
     newPagination.page = pageNumber;
     this.refreshPagination(newPagination);
+    this.onPageChange.emit(newPagination);
   }
 
   private setPagination(): void {
