@@ -7,14 +7,14 @@ import {
   saveCustomerTable,
   savedCustomerTable,
 } from './customer-table.actions';
-import { Customer } from 'src/app/features/customers/models/customer.interface';
+import { CustomerTableResponse } from './api/customer-table-response';
 
 interface CustomerTableState {
   loadingCustomerTable: boolean;
   loadedCustomerTable: boolean;
   failCustomerTable: boolean;
   failedCustomerTable: boolean;
-  customerTable: Customer[];
+  customerTable: CustomerTableResponse | undefined;
 }
 
 const customerTableInitialState: CustomerTableState = {
@@ -22,7 +22,7 @@ const customerTableInitialState: CustomerTableState = {
   loadedCustomerTable: false,
   failCustomerTable: false,
   failedCustomerTable: false,
-  customerTable: [],
+  customerTable: undefined,
 };
 
 const customerTableReducer = createReducer(
@@ -38,7 +38,7 @@ const customerTableReducer = createReducer(
     ...state,
     loadingCustomerTable: false,
     loadedCustomerTable: false,
-    customerTable: [...state.customerTable] as Customer[],
+    customerTable: { ...state.customerTable } as CustomerTableResponse,
     failCustomerTable: true,
   })),
 
@@ -51,7 +51,7 @@ const customerTableReducer = createReducer(
     ...state,
     loadingCustomerTable: true,
     loadedCustomerTable: true,
-    customerTable: [...action.customerTable] as Customer[],
+    customerTable: { ...action.customerTable } as CustomerTableResponse,
   })),
 
   on(savedCustomerTable, (state) => ({

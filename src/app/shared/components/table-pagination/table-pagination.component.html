@@ -1,0 +1,10 @@
+<div class="mt-10 flex justify-between items-center">
+  <span class="text-sm text-customGreyFont">Showing data {{ getRangeStart() }} to {{ getRangeEnd() }} of {{ pagination.totalElements }} entries</span>
+  <div class="flex space-x-2">
+    <app-pagination-button label="&lt;" (onClick)="paginationEvent($event)" [disabled]="pagination.page === 0" />
+    @for (page of pagesArray; track page) {
+    <app-pagination-button [label]="(page + 1).toString()" [active]="page === pagination.page" (onClick)="paginationEvent($event)" />
+    }
+    <app-pagination-button label="&gt;" (onClick)="paginationEvent($event)" [disabled]="totalPages - 1 === pagination.page" />
+  </div>
+</div>

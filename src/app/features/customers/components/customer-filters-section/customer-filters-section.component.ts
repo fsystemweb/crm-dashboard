@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { SelectItem } from 'src/app/shared/models/select-item.interface';
 
@@ -11,8 +11,10 @@ export class CustomerFiltersSectionComponent {
   private notificationService = inject(NotificationService);
   searchInput = '';
 
+  onSortChange = output<string>();
+
   readonly sortOptions: SelectItem[] = [
-    { value: 'name', label: 'Name' },
+    { value: 'customerName', label: 'Name' },
     { value: 'status', label: 'Status' },
     { value: 'country', label: 'Country' },
   ];
@@ -24,6 +26,7 @@ export class CustomerFiltersSectionComponent {
 
   updateSortValue(value: string): void {
     this.sortSelected = value;
+    this.onSortChange.emit(value);
   }
 
   addTag(): void {

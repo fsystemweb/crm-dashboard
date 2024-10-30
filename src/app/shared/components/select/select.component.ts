@@ -37,6 +37,6 @@ export class SelectComponent {
     this.selectedValue = option;
     this.isDropdownOpen = false;
     this.ref.markForCheck();
-    this.selectionChange.emit(this.selectedValue.value);
+    this.selectionChange.emit(option.value);
   }
 }
