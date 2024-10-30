@@ -2,34 +2,33 @@
 
 <div class="bg-white p-12 rounded-[30px] shadow-sm mt-11">
   <app-customer-filters-section (onSortChange)="updateSort($event)" (onFilterTagsChange)="updateTags($event)" />
-
-  <div class="customer-body-table"></div>
-  <table class="min-w-full table-auto">
-    <thead class="text-customGreyFont text-left">
-      <tr>
-        <th class="px-4 py-2 font-normal">Customer Name</th>
-        <th class="px-4 py-2 font-normal">Company</th>
-        <th class="px-4 py-2 font-normal">Phone Number</th>
-        <th class="px-4 py-2 font-normal">Email</th>
-        <th class="px-4 py-2 font-normal">Country</th>
-        <th class="px-4 py-2 font-normal">Status</th>
-      </tr>
-    </thead>
-    <tbody class="font-semibold">
-      @for (customer of customers; track customer.email) {
-      <tr class="border-t py-2">
-        <td class="px-4 py-6">{{ customer.customerName }}</td>
-        <td class="px-4 py-6">{{ customer.company }}</td>
-        <td class="px-4 py-6">{{ customer.phone }}</td>
-        <td class="px-4 py-6">{{ customer.email }}</td>
-        <td class="px-4 py-6">{{ customer.country }}</td>
-        <td class="px-4 py-6">
-          <app-customer-status [customerStatus]="customer.status" />
-        </td>
-      </tr>
-      }
-    </tbody>
-  </table>
-
+  <div class="overflow-x-auto mt-48 md:mt-24 lg:mt-0">
+    <table class="min-w-full">
+      <thead class="text-customGreyFont text-left">
+        <tr>
+          <th class="px-4 py-2 font-normal">Customer Name</th>
+          <th class="px-4 py-2 font-normal hidden md:hidden lg:table-cell">Company</th>
+          <th class="px-4 py-2 font-normal hidden md:hidden lg:table-cell">Phone Number</th>
+          <th class="px-4 py-2 font-normal hidden md:hidden lg:table-cell">Email</th>
+          <th class="px-4 py-2 font-normal hidden md:table-cell">Country</th>
+          <th class="px-4 py-2 font-normal hidden md:table-cell">Status</th>
+        </tr>
+      </thead>
+      <tbody class="font-semibold">
+        @for (customer of customers; track customer.email) {
+        <tr class="border-t py-2">
+          <td class="px-4 py-6">{{ customer.customerName }}</td>
+          <td class="px-4 py-6 hidden md:hidden lg:table-cell">{{ customer.company }}</td>
+          <td class="px-4 py-6 hidden md:hidden lg:table-cell">{{ customer.phone }}</td>
+          <td class="px-4 py-6 hidden md:hidden lg:table-cell">{{ customer.email }}</td>
+          <td class="px-4 py-6 hidden md:table-cell">{{ customer.country }}</td>
+          <td class="px-4 py-6 hidden md:table-cell">
+            <app-customer-status [customerStatus]="customer.status" />
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
   <app-table-pagination (onPageChange)="updatePagination($event)" />
 </div>
