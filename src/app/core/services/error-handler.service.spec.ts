@@ -47,8 +47,14 @@ describe('ErrorHandlerService', () => {
   }));
 
   it('should show a default notification if no message is present', fakeAsync(() => {
+    const errorResponse = new HttpErrorResponse({
+      error: undefined,
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
+
     mockStore.overrideSelector(getErrors, {
-      response: undefined,
+      response: errorResponse,
     });
 
     service.monitorErrorChanges();

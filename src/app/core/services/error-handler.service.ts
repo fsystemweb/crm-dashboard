@@ -22,12 +22,18 @@ export class ErrorHandlerService {
         debounceTime(400),
         distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
       )
-      .subscribe((error) => {
-        if (!error) {
+      .subscribe(({ response }) => {
+        if (!response) {
           return;
         }
 
-        let errorMessage = error.response?.message || error.response?.error;
+        let errorMessage = undefined;
+
+        try {
+          errorMessage = response?.error.message;
+        } catch (e: unknown) {
+          console.error(e);
+        }
 
         if (!errorMessage) {
           errorMessage = 'We are experiencing technical issues. Please try again later';

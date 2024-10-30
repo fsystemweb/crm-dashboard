@@ -1,5 +1,37 @@
 # CRM Dashboard
 
+This project was created using **Angular 18** and incorporates the latest Angular features, including:
+
+- **Input signals** for optimized reactivity
+- **Standalone components** to simplify module dependency management
+- `inject()` for efficient **dependency injection**
+
+## Architecture
+
+Our architecture follows a **feature module** approach with **lazy loading** for enhanced modularity and performance. All shared components are standalone, combining the advantages of feature modules and standalone components, which streamline development and reduce dependencies.
+
+## State Management
+
+For state handling, we use **NgRx**. Although services could handle state management for a project of this size, NgRx was implemented to showcase a single, immutable app state that simplifies component communication. This setup is beneficial for scaling and maintaining a clear, unified state across the app.
+
+## Performance
+
+To optimize performance, all components use `ChangeDetectionStrategy.OnPush`, minimizing unnecessary change detection cycles and improving rendering efficiency.
+
+## Api
+
+For the API, I'm using **json-server**, which serves static data at the URL `localhost:3000/`. This server starts simultaneously with the Angular server when you run `npm run start`.
+
+All sorting, pagination, and filtering of data are handled by a mock frontend service for demonstration purposes. A short delay is also added to simulate loading and display a global spinner, giving the user a clear loading experience.
+
+## Extra
+
+- Please review the section **"Pre-commit Hook"** to understand the coding standards we follow. Additional rules and best practices are enforced with **ESLint**, which you can reference in the ESLint configuration file for specific rules used to eliminate code smells.
+
+- For continuous integration, we use **GitHub Actions** to automate unit tests. For further details, see the **"GitHub Actions for Unit Tests"** section.
+
+- There are a few enhancements planned for future releases. For more information, check the **"Pending Tasks"** section.
+
 ## Libraries
 
     - Node v20
@@ -114,11 +146,12 @@ Here’s a list of pending tasks and features to implement:
 - [x] Add Filter mock functionality.
 - [x] Add spinner.
 - [x] Add Interceptor error handler.
-- [ ] Add sidebar icon chevron.
-- [ ] Add stat piper miles separator.
+- [x] Add sidebar icon chevron.
+- [x] Add stat piper miles separator.
+- [x] Update readme file.
 - [ ] Add Fix mobile view.
-- [ ] Update readme file.
 - [ ] Add 'Angular Testing Library' in the app, and start to create test with this library.
 - [ ] Add test coverage report.
 - [ ] Add real Backend with express using NX monorepo.
 - [ ] Add e2e with Cypress.
+- [ ] Add Icomoon project to handle all the icons.

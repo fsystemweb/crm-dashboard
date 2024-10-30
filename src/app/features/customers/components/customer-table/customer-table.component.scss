@@ -12,3 +12,9 @@ $border-color: #eeeeee;
     top: 65px;
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .customer-body-table {
+    border-top: none;
+  }
+}

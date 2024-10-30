@@ -8,7 +8,7 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Total Customers</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalCustomer }}</p>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalCustomer | number }}</p>
       <app-percentage-indicator [indicator]="statsCards.customerPercentage" />
     </div>
   </div>
@@ -23,7 +23,7 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Members</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalMembers }}</p>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalMembers | number }}</p>
       <app-percentage-indicator [indicator]="statsCards.membersPercentage" />
     </div>
   </div>
@@ -39,9 +39,9 @@
     </div>
     <div>
       <p class="text-sm text-customGreyFont">Active Now</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive }}</p>
+      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive | number }}</p>
       <div class="flex mt-2">
-        @for (user of statsCards.userActives; track user) {
+        @for (user of statsCards.userActives; track user.fullname) {
         <img
           [src]="user.picture | userPicture"
           [alt]="user.fullname"

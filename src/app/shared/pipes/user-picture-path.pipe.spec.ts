@@ -12,7 +12,7 @@ describe('UserPicturePathPipe', () => {
     expect(pipe.transform(picture)).toBe('/images/users/john_doe.jpg');
   });
 
-  it('should return an empty string when picture is an empty string', () => {
-    expect(pipe.transform('')).toBe('');
+  it('should return black user svg when picture is empty', () => {
+    expect(pipe.transform('')).toBe('/images/users/blank-user.png');
   });
 });

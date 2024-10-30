@@ -12,35 +12,20 @@
         <span class="text-lg font-bold menu-text" *ngIf="isExpanded">CRM Dashboard</span>
       </button>
       <nav class="space-y-4">
-        <a routerLink="/home" class="flex items-center" [class.closed-item]="!isExpanded" routerLinkActive="active">
-          <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="key" matTooltip="Dashboard" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Dashboard</span>
-        </a>
-        <a routerLink="/product" class="flex items-center" routerLinkActive="active">
-          <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="cube" matTooltip="Product" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Product</span>
-        </a>
-        <a routerLink="/customers" class="flex items-center" routerLinkActive="active">
-          <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="user" matTooltip="Customers" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Customers</span>
-        </a>
-        <a routerLink="/income" class="flex items-center" routerLinkActive="active">
-          <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="wallet" matTooltip="Income" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Income</span>
-        </a>
-        <a routerLink="/promote" class="flex items-center" routerLinkActive="active">
+        @for (menuItem of menuItems; track menuItem.title) {
+        <a [routerLink]="menuItem.route" class="flex items-center" routerLinkActive="active">
           <mat-icon
             class="w-6 h-6 m-2 ml-[9px]"
-            svgIcon="promote"
-            matTooltip="Promote"
+            [svgIcon]="menuItem.icon"
+            [matTooltip]="menuItem.title"
             matTooltipPosition="right"
             [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Promote</span>
+          @if(isExpanded){
+          <span class="menu-text">{{ menuItem.title }}</span>
+          <mat-icon class="mr-1 rotate-[270deg]" svgIcon="chevron-down" />
+          }
         </a>
-        <a routerLink="/help" class="flex items-center" routerLinkActive="active">
-          <mat-icon class="w-6 h-6 m-2 ml-[9px]" svgIcon="help" matTooltip="Help" matTooltipPosition="right" [matTooltipDisabled]="isExpanded" />
-          <span class="menu-text" *ngIf="isExpanded">Help</span>
-        </a>
+        }
       </nav>
     </aside>
   </main>

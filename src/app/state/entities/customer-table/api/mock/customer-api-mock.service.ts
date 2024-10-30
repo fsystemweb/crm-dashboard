@@ -52,7 +52,14 @@ export class CustomerApiMockService {
 
     return data.filter((item) => {
       return lowerCaseSearchStrings.every((searchString) => {
-        return Object.values(item).some((value) => String(value).toLowerCase() === searchString);
+        return Object.values(item).some((value) => {
+          const valueFormatted = String(value).toLowerCase();
+          if (searchString === 'active') {
+            return valueFormatted === searchString;
+          } else {
+            return valueFormatted.includes(searchString);
+          }
+        });
       });
     });
   }
