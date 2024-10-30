@@ -6,7 +6,7 @@
   </button>
   @if(isDropdownOpen){
   <div class="absolute z-10 bg-white border rounded-lg mt-1 w-40">
-    @for(option of options(); track option){
+    @for(option of options(); track option.value){
     <div (click)="selectOption(option)" class="p-2 hover:bg-gray-200 cursor-pointer">
       {{ option.label }}
     </div>

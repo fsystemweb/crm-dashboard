@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody class="font-semibold">
-      @for (customer of customers; track customer) {
+      @for (customer of customers; track customer.email) {
       <tr class="border-t py-2">
         <td class="px-4 py-6">{{ customer.customerName }}</td>
         <td class="px-4 py-6">{{ customer.company }}</td>

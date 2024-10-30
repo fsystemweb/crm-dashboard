@@ -12,7 +12,7 @@
         <span class="text-lg font-bold menu-text" *ngIf="isExpanded">CRM Dashboard</span>
       </button>
       <nav class="space-y-4">
-        @for (menuItem of menuItems; track menuItem) {
+        @for (menuItem of menuItems; track menuItem.title) {
         <a [routerLink]="menuItem.route" class="flex items-center" routerLinkActive="active">
           <mat-icon
             class="w-6 h-6 m-2 ml-[9px]"

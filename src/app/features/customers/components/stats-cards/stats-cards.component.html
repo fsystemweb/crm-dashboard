@@ -41,7 +41,7 @@
       <p class="text-sm text-customGreyFont">Active Now</p>
       <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive | number }}</p>
       <div class="flex mt-2">
-        @for (user of statsCards.userActives; track user) {
+        @for (user of statsCards.userActives; track user.fullname) {
         <img
           [src]="user.picture | userPicture"
           [alt]="user.fullname"
