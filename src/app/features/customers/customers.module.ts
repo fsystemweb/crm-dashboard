@@ -16,6 +16,7 @@ import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
 import { SelectComponent } from '../../shared/components/select/select.component';
 import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
 import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
+import { CustomerStatusComponent } from './components/customer-status/customer-status.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
     CustomerFiltersSectionComponent,
     PercentageIndicatorComponent,
     FilterTagComponent,
+    CustomerStatusComponent,
   ],
 })
 export class CustomersModule {}

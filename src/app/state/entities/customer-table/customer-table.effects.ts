@@ -8,12 +8,13 @@ import { saveErrorAction } from '../../error/error.actions';
 import { failFetchCustomerTable, fetchCustomerTable, saveCustomerTable } from './customer-table.actions';
 import { Customer } from 'src/app/features/customers/models/customer.interface';
 import { Pagination } from 'src/app/shared/models/pagination.interface';
-import { CustomerTableResponse } from './api/customer-table-response';
+import { CustomerApiMockService } from './api/mock/customer-api-mock.service';
 
 @Injectable()
 export class CustomerTableEffects {
   private actions$ = inject(Actions);
   private httpClient = inject(HttpClient);
+  private customerApiMockService = inject(CustomerApiMockService);
 
   CustomerTable$ = createEffect(() =>
     this.actions$.pipe(
@@ -23,9 +24,7 @@ export class CustomerTableEffects {
           map((response) => {
             const customerTable = response as Customer[];
 
-            const mockPagination = this.createFakePagination(action.pagination, customerTable.length);
-
-            const customerTableResponse: CustomerTableResponse = new CustomerTableResponse(customerTable, mockPagination);
+            const customerTableResponse = this.customerApiMockService.createMockResponse(action.pagination, customerTable);
 
             return saveCustomerTable({
               customerTable: customerTableResponse,
@@ -47,13 +46,5 @@ export class CustomerTableEffects {
     }
 
     return httpParams;
-  }
-
-  private createFakePagination(pagination: Pagination, totalElements: number): Pagination {
-    return {
-      page: pagination.page,
-      size: pagination.size,
-      totalElements: totalElements,
-    };
   }
 }
