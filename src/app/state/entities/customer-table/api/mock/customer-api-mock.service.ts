@@ -50,7 +50,7 @@ export class CustomerApiMockService {
 
     return data.filter((item) => {
       return lowerCaseSearchStrings.every((searchString) => {
-        return Object.values(item).some((value) => String(value).toLowerCase().includes(searchString));
+        return Object.values(item).some((value) => String(value).toLowerCase() === searchString);
       });
     });
   }

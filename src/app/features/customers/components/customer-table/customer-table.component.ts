@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
-import { filter } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 import { AppState } from 'src/app/state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
@@ -32,6 +32,8 @@ export class CustomerTableComponent {
   };
 
   filterTags: string[] = [];
+
+  loading$: Observable<boolean> = this.store.select(getCustomerTable).pipe(map(({ loadingCustomerTable }) => loadingCustomerTable));
 
   constructor() {
     this.fetchCustomerTable();

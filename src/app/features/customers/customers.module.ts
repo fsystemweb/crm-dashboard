@@ -17,6 +17,7 @@ import { SelectComponent } from '../../shared/components/select/select.component
 import { FilterTagComponent } from './components/filter-tag/filter-tag.component';
 import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
 import { CustomerStatusComponent } from './components/customer-status/customer-status.component';
+import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinner-overlay/spinner-overlay.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { CustomerStatusComponent } from './components/customer-status/customer-s
     SelectComponent,
     EllipsisTextPipe,
     TablePaginationComponent,
+    SpinnerOverlayComponent,
   ],
   declarations: [
     CustomersPageComponent,

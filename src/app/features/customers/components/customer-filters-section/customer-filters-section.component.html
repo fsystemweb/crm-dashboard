@@ -1,7 +1,9 @@
 <div class="flex justify-between mb-4">
   <div>
     <h2 class="text-2xl font-semibold">All Customers</h2>
+    @if(tags.length === 1 && tags[0].toLowerCase() === 'active'){
     <span class="text-green-500">Active members</span>
+    }
   </div>
   <div class="flex space-x-4 h-10">
     <div class="p-2">

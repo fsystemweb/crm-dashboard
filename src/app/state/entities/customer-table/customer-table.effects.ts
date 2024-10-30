@@ -10,13 +10,20 @@ import { Customer } from 'src/app/features/customers/models/customer.interface';
 import { Pagination } from 'src/app/shared/models/pagination.interface';
 import { CustomerApiMockService } from './api/mock/customer-api-mock.service';
 
+// eslint-disable-next-line
+const delayForDemoPurposes = (duration: number) => {
+  const end = Date.now() + duration;
+  // eslint-disable-next-line
+  while (Date.now() < end) {}
+};
+
 @Injectable()
 export class CustomerTableEffects {
   private actions$ = inject(Actions);
   private httpClient = inject(HttpClient);
   private customerApiMockService = inject(CustomerApiMockService);
 
-  CustomerTable$ = createEffect(() =>
+  customerTable$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchCustomerTable),
       switchMap((action) =>
@@ -25,6 +32,8 @@ export class CustomerTableEffects {
             const customerTable = response as Customer[];
 
             const customerTableResponse = this.customerApiMockService.createMockResponse(action.pagination, action.filterTags, customerTable);
+
+            delayForDemoPurposes(400);
 
             return saveCustomerTable({
               customerTable: customerTableResponse,
