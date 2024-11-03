@@ -1,7 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, HostListener, ElementRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, HostListener, ElementRef, OnInit, NgZone, DestroyRef } from '@angular/core';
 
 import { MenuItem } from '../../models/menu-item.interface';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { fromEvent } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,8 +16,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
     ]),
   ],
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+  private ngZone = inject(NgZone);
+  private destroyRef = inject(DestroyRef);
   private elementRef = inject(ElementRef);
+
   isExpanded = false;
 
   menuItems: MenuItem[] = [
@@ -51,18 +56,23 @@ export class ToolbarComponent {
     },
   ];
 
+  ngOnInit(): void {
+    this.ngZone.runOutsideAngular(() => {
+      fromEvent(window, 'click')
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((event) => {
+          if (this.isExpanded && !this.elementRef.nativeElement.contains(event.target)) {
+            this.isExpanded = false;
+          }
+        });
+    });
+  }
+
   toggleToolbar(): void {
     this.isExpanded = !this.isExpanded;
   }
 
   closeToolbar(): void {
     this.isExpanded = false;
-  }
-
-  @HostListener('document:click', ['$event'])
-  onClickOutside(event: Event): void {
-    if (this.isExpanded && !this.elementRef.nativeElement.contains(event.target)) {
-      this.isExpanded = false;
-    }
   }
 }
