@@ -57,6 +57,18 @@ export class ToolbarComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.onClickOutside();
+  }
+
+  toggleToolbar(): void {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  closeToolbar(): void {
+    this.isExpanded = false;
+  }
+
+  private onClickOutside(): void {
     this.ngZone.runOutsideAngular(() => {
       fromEvent(window, 'click')
         .pipe(takeUntilDestroyed(this.destroyRef))
@@ -66,13 +78,5 @@ export class ToolbarComponent implements OnInit {
           }
         });
     });
-  }
-
-  toggleToolbar(): void {
-    this.isExpanded = !this.isExpanded;
-  }
-
-  closeToolbar(): void {
-    this.isExpanded = false;
   }
 }
