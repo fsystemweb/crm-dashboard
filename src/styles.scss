@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 @import './styles/reset';
-
-@font-face {
-  font-family: Poppins;
-  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
-}
+@import './styles/fonts';
 
 html,
 body {
