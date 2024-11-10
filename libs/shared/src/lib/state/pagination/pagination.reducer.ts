@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { setPagination } from './pagination.actions';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { Pagination } from '../../models/pagination.interface';
 
 interface PaginationState {
   pagination: Pagination;

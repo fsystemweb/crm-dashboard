@@ -1,4 +1,5 @@
 {
+  "extends": ["../../.eslintrc.base.json"],
   "ignorePatterns": ["!**/*", "*.spec.ts"],
   "overrides": [
     {
@@ -70,6 +71,5 @@
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
     }
-  ],
-  "extends": ["./.eslintrc.base.json"]
+  ]
 }

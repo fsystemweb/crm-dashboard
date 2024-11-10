@@ -7,9 +7,8 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { StatsCardsComponent } from './stats-cards.component';
 import { PercentageIndicatorComponent } from '../percentage-indicator/percentage-indicator.component';
 import { FormsModule } from '@angular/forms';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
 import { getStatsCards } from 'src/app/state/entities/stats-cards/stats-cards.selectors';
-import { MathAbsPipe } from 'src/app/shared/pipes/math-abs.pipe';
+import { IconModule, MathAbsPipe } from '@crm-dashboard/shared';
 
 const MOCK_DATA = {
   selector: getStatsCards,

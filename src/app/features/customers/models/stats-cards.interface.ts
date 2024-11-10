@@ -1,4 +1,4 @@
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
+import { UserInfo } from '@crm-dashboard/shared';
 
 export interface StatsCards {
   totalCustomer: number;

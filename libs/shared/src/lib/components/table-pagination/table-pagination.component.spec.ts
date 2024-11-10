@@ -2,11 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChangeDetectorRef } from '@angular/core';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { Store } from '@ngrx/store';
-import { of } from 'rxjs';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
 import { TablePaginationComponent } from './table-pagination.component';
-import { getPagination } from 'src/app/state/entities/pagination/pagination.selectors';
 import { PaginationButtonComponent } from '../pagination-button/pagination-button.component';
+import { getPagination } from '../../state/pagination/pagination.selectors';
 
 describe('TablePaginationComponent', () => {
   let component: TablePaginationComponent;

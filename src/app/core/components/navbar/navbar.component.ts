@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, inject, DestroyRef, ChangeDetectorR
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AppState } from 'src/app/state/app.reducer';
-import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
+import { AppState } from '../../../state/app.reducer';
+import { getUserInfo } from '../../../state/entities/user-info/user-info.selectors';
 
 @Component({
   selector: 'app-navbar',

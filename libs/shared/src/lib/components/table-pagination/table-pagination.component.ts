@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject, output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
-import { AppState } from 'src/app/state/app.reducer';
-import { getPagination } from 'src/app/state/entities/pagination/pagination.selectors';
+import { Pagination } from '../../models/pagination.interface';
+import { getPagination } from '../../state/pagination/pagination.selectors';
 import { PaginationButtonComponent } from '../pagination-button/pagination-button.component';
+import { PaginationState } from '../../state';
 
 @Component({
   selector: 'app-table-pagination',
@@ -14,7 +14,7 @@ import { PaginationButtonComponent } from '../pagination-button/pagination-butto
   imports: [PaginationButtonComponent],
 })
 export class TablePaginationComponent {
-  private store: Store<AppState> = inject(Store);
+  private store: Store<PaginationState> = inject(Store);
   private destroyRef = inject(DestroyRef);
   private ref = inject(ChangeDetectorRef);
 

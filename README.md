@@ -9,6 +9,8 @@ This project was created using **Angular 18** and incorporates the latest Angula
 ## Architecture
 
 Our architecture follows a **feature module** approach with **lazy loading** for enhanced modularity and performance. All shared components are standalone, combining the advantages of feature modules and standalone components, which streamline development and reduce dependencies.
+.
+This project demonstrates the use of Nx libraries. The **shared module** is implemented as an Nx library
 
 Additionally, the styling follows a **mobile-first** approach to ensure optimal responsiveness across devices.
 
@@ -77,10 +79,10 @@ To start only the json-server(API-mock), use:
 npm run jsonserver
 ```
 
-To run tests, use:
+To run tests in the entire project, use:
 
 ```sh
-npx nx test
+npx nx run-many --target=test --all
 ```
 
 To create a production bundle:
@@ -89,10 +91,10 @@ To create a production bundle:
 npx nx build crm-dashboard
 ```
 
-To run lint checks
+To run lint checks in the entire project
 
 ```sh
-npx nx lint
+npx nx run-many --target=lint --all
 ```
 
 To run prettier format

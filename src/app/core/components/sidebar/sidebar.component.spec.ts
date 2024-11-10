@@ -1,15 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SidebarComponent } from './sidebar.component';
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
+
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { UserPicturePathPipe } from 'src/app/shared/pipes/user-picture-path.pipe';
-import { UserRolePipe } from 'src/app/shared/pipes/user-role.pipe';
+
 import { provideMockStore } from '@ngrx/store/testing';
 import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
-import { userInfo } from 'os';
-import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinner-overlay/spinner-overlay.component';
+import { IconModule, SpinnerOverlayComponent, UserInfo, UserPicturePathPipe, UserRolePipe } from '@crm-dashboard/shared';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;

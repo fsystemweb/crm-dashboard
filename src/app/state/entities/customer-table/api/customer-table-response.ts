@@ -1,5 +1,5 @@
-import { Customer } from 'src/app/features/customers/models/customer.interface';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { Customer } from '../../../../features/customers/models/customer.interface';
+import { Pagination } from '@crm-dashboard/shared';
 
 export class CustomerTableResponse {
   customers: Customer[] | undefined;

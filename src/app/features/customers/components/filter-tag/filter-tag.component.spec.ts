@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterTagComponent } from './filter-tag.component';
 import { ComponentRef } from '@angular/core';
-import { EllipsisTextPipe } from 'src/app/shared/pipes/ellipsis-text.pipe';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
+
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { EllipsisTextPipe, IconModule } from '@crm-dashboard/shared';
 
 describe('FilterTagComponent', () => {
   let component: FilterTagComponent;

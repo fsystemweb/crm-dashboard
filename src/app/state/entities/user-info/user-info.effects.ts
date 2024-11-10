@@ -2,11 +2,11 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { of } from 'rxjs';
 import { saveErrorAction } from '../../error/error.actions';
 import { failFetchUserInfo, fetchUserInfo, saveUserInfo } from './user-info.actions';
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
+import { UserInfo } from '@crm-dashboard/shared';
 
 @Injectable()
 export class UserInfoEffects {

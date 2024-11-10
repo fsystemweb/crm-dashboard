@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Customer } from 'src/app/features/customers/models/customer.interface';
-import { Pagination, PaginationSort } from 'src/app/shared/models/pagination.interface';
+import { Customer } from '../../../../../features/customers/models/customer.interface';
+
 import { CustomerTableResponse } from '../customer-table-response';
+import { Pagination, PaginationSort } from '@crm-dashboard/shared';
 
 @Injectable({
   providedIn: 'root',

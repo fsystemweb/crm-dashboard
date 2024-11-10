@@ -3,7 +3,6 @@ import * as ErrorReducer from './error/error.reducer';
 import { userInfoInitialState, userInfoReducer, UserInfoState } from './entities/user-info/user-info.reducer';
 import { statsCardsInitialState, statsCardsReducer, StatsCardsState } from './entities/stats-cards/stats-cards.reducer';
 import { customerTableInitialState, customerTableReducer, CustomerTableState } from './entities/customer-table/customer-table.reducer';
-import { paginationInitialState, paginationReducer, PaginationState } from './entities/pagination/pagination.reducer';
 
 interface AppState {
   error: ErrorReducer.State;
@@ -12,7 +11,6 @@ interface AppState {
   userInfo: UserInfoState;
   statsCards: StatsCardsState;
   customerTable: CustomerTableState;
-  pagination: PaginationState;
 }
 
 const appReducers: ActionReducerMap<AppState> = {
@@ -22,7 +20,6 @@ const appReducers: ActionReducerMap<AppState> = {
   userInfo: userInfoReducer,
   statsCards: statsCardsReducer,
   customerTable: customerTableReducer,
-  pagination: paginationReducer,
 };
 
 const initialState: AppState = {
@@ -32,7 +29,6 @@ const initialState: AppState = {
   userInfo: userInfoInitialState,
   statsCards: statsCardsInitialState,
   customerTable: customerTableInitialState,
-  pagination: paginationInitialState,
 };
 
 export { AppState, appReducers, initialState };

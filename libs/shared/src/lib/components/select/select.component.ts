@@ -1,6 +1,6 @@
 import { Component, input, output, effect, inject, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SelectItem } from 'src/app/shared/models/select-item.interface';
+import { SelectItem } from '../../models/select-item.interface';
 import { IconModule } from '../icons/icon.module';
 
 @Component({

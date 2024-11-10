@@ -7,8 +7,9 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { NavbarComponent } from './navbar.component';
 import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
 import { FormsModule } from '@angular/forms';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
+
 import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { IconModule } from '@crm-dashboard/shared';
 describe('NavbarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({

@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { UserInfoEffects } from './state/entities/user-info/user-info.effects';
 import { StatsCardsEffects } from './state/entities/stats-cards/stats-cards.effects';
+import { SharedModule } from '@crm-dashboard/shared';
 import { CustomerTableEffects } from './state/entities/customer-table/customer-table.effects';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CustomerTableEffects } from './state/entities/customer-table/customer-t
     }),
     CoreModule,
     MatSnackBarModule,
+    SharedModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })
