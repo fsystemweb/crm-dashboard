@@ -4,7 +4,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { Store } from '@ngrx/store';
 import { TablePaginationComponent } from './table-pagination.component';
 import { PaginationButtonComponent } from '../pagination-button/pagination-button.component';
-import { getPagination } from '../../state';
+import { getPagination } from '../../state/pagination/pagination.selectors';
 
 describe('TablePaginationComponent', () => {
   let component: TablePaginationComponent;
