@@ -2,9 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToolbarComponent } from './toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
+import { IconModule } from '@crm-dashboard/shared';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;

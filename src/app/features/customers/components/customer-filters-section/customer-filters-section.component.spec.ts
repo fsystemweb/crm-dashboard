@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CustomerFiltersSectionComponent } from './customer-filters-section.component';
 import { NotificationService } from 'src/app/core/services/notification.service';
-import { SelectComponent } from '../../../../shared/components/select/select.component';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
+import { IconModule, SelectComponent } from '@crm-dashboard/shared';
 
 describe('CustomerFiltersSectionComponent', () => {
   let component: CustomerFiltersSectionComponent;

@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SelectComponent } from './select.component';
-import { SelectItem } from 'src/app/shared/models/select-item.interface';
 import { ComponentRef } from '@angular/core';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
+import { SelectItem } from '../../models/select-item.interface';
 
 describe('SelectComponent', () => {
   let component: SelectComponent;

@@ -7,19 +7,19 @@ import { setPagination } from 'src/app/state/entities/pagination/pagination.acti
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
 import { ChangeDetectorRef } from '@angular/core';
 import { of } from 'rxjs';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Customer } from '../../models/customer.interface';
 import { CustomerTableResponse } from 'src/app/state/entities/customer-table/api/customer-table-response';
 import { CustomerFiltersSectionComponent } from '../customer-filters-section/customer-filters-section.component';
-import { TablePaginationComponent } from 'src/app/shared/components/table-pagination/table-pagination.component';
-import { SelectComponent } from 'src/app/shared/components/select/select.component';
+
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
-import { IconModule } from 'src/app/shared/components/icons/icon.module';
+
 import { CustomerStatusComponent } from '../customer-status/customer-status.component';
-import { SpinnerOverlayComponent } from 'src/app/shared/components/spinner/spinner-overlay/spinner-overlay.component';
+import { IconModule, Pagination, SelectComponent, SpinnerOverlayComponent, TablePaginationComponent } from '@crm-dashboard/shared';
+
 describe('CustomerTableComponent', () => {
   let component: CustomerTableComponent;
   let fixture: ComponentFixture<CustomerTableComponent>;
