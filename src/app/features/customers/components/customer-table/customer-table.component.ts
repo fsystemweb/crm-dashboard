@@ -6,9 +6,7 @@ import { AppState } from '../../../../state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from '../../../../state/entities/customer-table/customer-table.actions';
 import { getCustomerTable } from '../../../../state/entities/customer-table/customer-table.selectors';
 import { Customer } from '../../models/customer.interface';
-
-import { setPagination } from '../../../../state/entities/pagination/pagination.actions';
-import { Pagination, PaginationSort } from '@crm-dashboard/shared';
+import { Pagination, PaginationSort, setPagination } from '@crm-dashboard/shared';
 
 @Component({
   selector: 'app-customer-table',

@@ -17,3 +17,5 @@ export * from './lib//pipes/math-abs.pipe';
 export * from './lib//pipes/user-picture-path.pipe';
 export * from './lib//pipes/user-role.pipe';
 //State
+export * from './lib/state';
+export * from './lib/shared.module';

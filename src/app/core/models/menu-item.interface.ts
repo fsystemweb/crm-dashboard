@@ -1,4 +1,4 @@
-import { Icon } from 'src/app/shared/components/icons/models/icon';
+import { Icon } from '@crm-dashboard/shared';
 
 export interface MenuItem {
   route: string;

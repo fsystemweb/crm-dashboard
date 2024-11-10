@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { CustomerTableComponent } from './customer-table.component';
 import { AppState } from 'src/app/state/app.reducer';
 import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
-import { setPagination } from 'src/app/state/entities/pagination/pagination.actions';
+
 import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
 import { ChangeDetectorRef } from '@angular/core';
 import { of } from 'rxjs';
@@ -18,7 +18,7 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 
 import { CustomerStatusComponent } from '../customer-status/customer-status.component';
-import { IconModule, Pagination, SelectComponent, SpinnerOverlayComponent, TablePaginationComponent } from '@crm-dashboard/shared';
+import { IconModule, Pagination, SelectComponent, setPagination, SpinnerOverlayComponent, TablePaginationComponent } from '@crm-dashboard/shared';
 
 describe('CustomerTableComponent', () => {
   let component: CustomerTableComponent;
