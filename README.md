@@ -9,6 +9,8 @@ This project was created using **Angular 18** and incorporates the latest Angula
 ## Architecture
 
 Our architecture follows a **feature module** approach with **lazy loading** for enhanced modularity and performance. All shared components are standalone, combining the advantages of feature modules and standalone components, which streamline development and reduce dependencies.
+.
+This project demonstrates the use of Nx libraries. The **shared module** is implemented as an Nx library
 
 Additionally, the styling follows a **mobile-first** approach to ensure optimal responsiveness across devices.
 
