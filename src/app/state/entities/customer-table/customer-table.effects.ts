@@ -2,13 +2,13 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { of } from 'rxjs';
 import { saveErrorAction } from '../../error/error.actions';
 import { failFetchCustomerTable, fetchCustomerTable, saveCustomerTable } from './customer-table.actions';
-import { Customer } from 'src/app/features/customers/models/customer.interface';
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { Customer } from '../../../features/customers/models/customer.interface';
 import { CustomerApiMockService } from './api/mock/customer-api-mock.service';
+import { Pagination } from '@crm-dashboard/shared';
 
 // eslint-disable-next-line
 const delayForDemoPurposes = (duration: number) => {

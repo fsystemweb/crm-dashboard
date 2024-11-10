@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { fetchStatsCards, failFetchStatsCards, failedFetchStatsCards, saveStatsCards, savedStatsCards } from './stats-cards.actions';
-import { StatsCards } from 'src/app/features/customers/models/stats-cards.interface';
+import { StatsCards } from '../../../features/customers/models/stats-cards.interface';
 
 interface StatsCardsState {
   loadingStatsCards: boolean;

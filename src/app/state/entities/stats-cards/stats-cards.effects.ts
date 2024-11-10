@@ -2,11 +2,11 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { of } from 'rxjs';
 import { saveErrorAction } from '../../error/error.actions';
 import { failFetchStatsCards, fetchStatsCards, saveStatsCards } from './stats-cards.actions';
-import { StatsCards } from 'src/app/features/customers/models/stats-cards.interface';
+import { StatsCards } from '../../../features/customers/models/stats-cards.interface';
 
 @Injectable()
 export class StatsCardsEffects {

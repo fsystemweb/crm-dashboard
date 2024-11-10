@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
-import { NotificationService } from 'src/app/core/services/notification.service';
-import { SelectItem } from 'src/app/shared/models/select-item.interface';
+import { NotificationService } from '../../../../core/services/notification.service';
+import { SelectItem } from '@crm-dashboard/shared';
 
 @Component({
   selector: 'app-customer-filters-section',

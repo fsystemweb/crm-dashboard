@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inje
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Store } from '@ngrx/store';
 import { filter, map, Observable } from 'rxjs';
-import { AppState } from 'src/app/state/app.reducer';
-import { fetchCustomerTable, savedCustomerTable } from 'src/app/state/entities/customer-table/customer-table.actions';
-import { getCustomerTable } from 'src/app/state/entities/customer-table/customer-table.selectors';
+import { AppState } from '../../../../state/app.reducer';
+import { fetchCustomerTable, savedCustomerTable } from '../../../../state/entities/customer-table/customer-table.actions';
+import { getCustomerTable } from '../../../../state/entities/customer-table/customer-table.selectors';
 import { Customer } from '../../models/customer.interface';
-import { Pagination, PaginationSort } from 'src/app/shared/models/pagination.interface';
-import { setPagination } from 'src/app/state/entities/pagination/pagination.actions';
+
+import { setPagination } from '../../../../state/entities/pagination/pagination.actions';
+import { Pagination, PaginationSort } from '@crm-dashboard/shared';
 
 @Component({
   selector: 'app-customer-table',

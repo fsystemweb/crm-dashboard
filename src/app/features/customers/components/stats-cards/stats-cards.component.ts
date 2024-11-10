@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject } from '@angular/core';
 import { StatsCards } from '../../models/stats-cards.interface';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/state/app.reducer';
-import { getStatsCards } from 'src/app/state/entities/stats-cards/stats-cards.selectors';
+import { AppState } from '../../../../state/app.reducer';
+import { getStatsCards } from '../../../../state/entities/stats-cards/stats-cards.selectors';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
-import { fetchStatsCards, savedStatsCards } from 'src/app/state/entities/stats-cards/stats-cards.actions';
+import { fetchStatsCards, savedStatsCards } from '../../../../state/entities/stats-cards/stats-cards.actions';
 
 @Component({
   selector: 'app-stats-cards',

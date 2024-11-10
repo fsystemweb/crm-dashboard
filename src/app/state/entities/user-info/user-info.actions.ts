@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
+import { UserInfo } from '@crm-dashboard/shared';
 
 const fetchUserInfo = createAction('[User Info] Fetch');
 

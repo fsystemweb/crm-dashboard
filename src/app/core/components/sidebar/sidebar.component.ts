@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, DestroyRef } from '@angular/core';
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
 import { Store } from '@ngrx/store';
 import { filter, map, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AppState } from 'src/app/state/app.reducer';
-import { getUserInfo } from 'src/app/state/entities/user-info/user-info.selectors';
-import { fetchUserInfo, savedUserInfo } from 'src/app/state/entities/user-info/user-info.actions';
-import { Icon } from 'src/app/shared/components/icons/models/icon';
+import { AppState } from '../../../state/app.reducer';
+import { getUserInfo } from '../../../state/entities/user-info/user-info.selectors';
+import { fetchUserInfo, savedUserInfo } from '../../../state/entities/user-info/user-info.actions';
+import { Icon, UserInfo } from '@crm-dashboard/shared';
 
 interface MenuItem {
   route: string;

@@ -1,4 +1,4 @@
-import { Pagination } from 'src/app/shared/models/pagination.interface';
+import { Pagination } from '@crm-dashboard/shared';
 
 export class CustomerTableRequest {
   pagination: Pagination;

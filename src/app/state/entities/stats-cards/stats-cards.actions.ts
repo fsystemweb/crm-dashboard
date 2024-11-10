@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { StatsCards } from 'src/app/features/customers/models/stats-cards.interface';
+import { StatsCards } from '../../../features/customers/models/stats-cards.interface';
 
 const fetchStatsCards = createAction('[Stats Cards] Fetch');
 
