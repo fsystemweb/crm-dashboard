@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, HostListener, ElementRef, OnInit, NgZone, DestroyRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ElementRef, OnInit, NgZone, DestroyRef } from '@angular/core';
 
 import { MenuItem } from '../../models/menu-item.interface';
 import { animate, style, transition, trigger } from '@angular/animations';

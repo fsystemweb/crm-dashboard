@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { UserInfo } from 'src/app/shared/models/user-info.interface';
 import { fetchUserInfo, failFetchUserInfo, failedFetchUserInfo, saveUserInfo, savedUserInfo } from './user-info.actions';
+import { UserInfo } from 'src/app/shared/models/user-info.interface';
 
 interface UserInfoState {
   loadingUserInfo: boolean;

@@ -77,10 +77,10 @@ To start only the json-server(API-mock), use:
 npm run jsonserver
 ```
 
-To run tests, use:
+To run tests in the entire project, use:
 
 ```sh
-npx nx test
+npx nx run-many --target=test --all
 ```
 
 To create a production bundle:
@@ -89,10 +89,10 @@ To create a production bundle:
 npx nx build crm-dashboard
 ```
 
-To run lint checks
+To run lint checks in the entire project
 
 ```sh
-npx nx lint
+npx nx run-many --target=lint --all
 ```
 
 To run prettier format
