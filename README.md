@@ -24,7 +24,7 @@ To optimize performance, all components use `ChangeDetectionStrategy.OnPush`, mi
 
 ## Api
 
-For the API, I'm using **json-server**, which serves static data at the URL `localhost:3000/`. This server starts simultaneously with the Angular server when you run `npm run start`.
+For the API, I'm using **json-server**, which serves static data at the URL `crm-dashboard-api-6yw3.onrender.com:10000/`. This server starts simultaneously with the Angular server when you run `npm run start`.
 
 All sorting, pagination, and filtering of data are handled by a mock frontend service for demonstration purposes. A short delay is also added to simulate loading and display a global spinner, giving the user a clear loading experience.
 
@@ -71,12 +71,6 @@ To run only the dev server for Angular, use:
 
 ```sh
 npx nx serve crm-dashboard
-```
-
-To start only the json-server(API-mock), use:
-
-```sh
-npm run jsonserver
 ```
 
 To run tests in the entire project, use:
