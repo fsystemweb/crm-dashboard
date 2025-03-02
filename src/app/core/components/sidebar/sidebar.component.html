@@ -43,11 +43,15 @@
         <span class="text-xs text-customGreyFont">{{ user.role }}</span>
       </div>
     </div>
-    <button class="mt-4 p-2" (click)="toggleSidebar()" matTooltip="Toggle Sidebar" matTooltipPosition="right">
+    <button
+      class="mt-4 p-2 bg-purple-700 rounded w-8 flex justify-center items-center"
+      (click)="toggleSidebar()"
+      matTooltip="Toggle Sidebar"
+      matTooltipPosition="right">
       @if(isExpanded){
-      <mat-icon svgIcon="chevron-left" />
+      <mat-icon class="text-white" svgIcon="chevron-left" />
       }@else{
-      <mat-icon svgIcon="chevron-right" />
+      <mat-icon class="text-white" svgIcon="chevron-right" />
       }
     </button>
   </footer>
