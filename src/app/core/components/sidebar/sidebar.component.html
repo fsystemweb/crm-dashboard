@@ -29,8 +29,8 @@
       </nav>
     </aside>
   </main>
-  <footer class="bg-white sticky bottom-20 pl-6 flex">
-    <div class="flex mt-2">
+  <footer class="bg-white sticky bottom-5 pl-6 flex flex-col">
+    <div class="flex items-center mt-2">
       <img
         [src]="user.picture | userPicture"
         alt="User"
@@ -38,15 +38,18 @@
         [matTooltip]="user | userRole"
         matTooltipPosition="right"
         [matTooltipDisabled]="isExpanded" />
-    </div>
-    <div>
-      @if(isExpanded){
-      <div class="flex flex-col ml-2 mt-3">
+      <div *ngIf="isExpanded" class="flex flex-col ml-3 mt-1">
         <span class="text-sm">{{ user.fullname }}</span>
         <span class="text-xs text-customGreyFont">{{ user.role }}</span>
       </div>
-      }
     </div>
+    <button class="mt-4 p-2" (click)="toggleSidebar()" matTooltip="Toggle Sidebar" matTooltipPosition="right">
+      @if(isExpanded){
+      <mat-icon svgIcon="chevron-left" />
+      }@else{
+      <mat-icon svgIcon="chevron-right" />
+      }
+    </button>
   </footer>
 </div>
 

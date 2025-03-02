@@ -13,6 +13,8 @@ const iconRegistry = [
   'arrow',
   'chevron-down',
   'cross',
+  'chevron-left',
+  'chevron-right',
 ];
 
 type Icon = (typeof iconRegistry)[number];
