@@ -132,7 +132,7 @@ The workflow is located in `.github/workflows/run-tests.yml` and runs when you c
 
 ## Design
 
--Figma: https://www.figma.com/design/x37vTidKs6RttTOckuXCib/CRM-Dashboard-Customers-List-(Community)?t=mpBkgaJxeI75i3i8-0
+-Figma: https://www.figma.com/design/7kOhiSVhUSjLYOtNn1UfRn/CRM-Dashboard-Customers-List--Community-?t=kgjiV4EBYARHTDt0-0
 
 ## Pending Tasks
 
