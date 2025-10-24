@@ -1,10 +1,23 @@
 # CRM Dashboard
+[![Angular](https://img.shields.io/badge/Angular-18.2.0-DD0031?logo=angular&logoColor=white)](https://angular.io/)
+[![Nx](https://img.shields.io/badge/Nx-20.0.3-000000?logo=nx&logoColor=white)](https://nx.dev/)
+[![NgRx](https://img.shields.io/badge/NgRx-18.1.1-EC2E2F?logo=ngrx&logoColor=white)](https://ngrx.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.14-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![RxJS](https://img.shields.io/badge/RxJS-7.8.0-B7178C?logo=reactivex&logoColor=white)](https://rxjs.dev/)
+[![ESLint](https://img.shields.io/badge/ESLint-8.57.0-4B32C3?logo=eslint&logoColor=white)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-2.6.2-F7B93E?logo=prettier&logoColor=black)](https://prettier.io/)
+[![Jest](https://img.shields.io/badge/Jest-29.7.0-C21325?logo=jest&logoColor=white)](https://jestjs.io/)
+[![Husky](https://img.shields.io/badge/Husky-8.0.0-000000?logo=husky&logoColor=white)](https://typicode.github.io/husky)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 This project was created using **Angular 18** and incorporates the latest Angular features, including:
 
 - **Input signals** for optimized reactivity
 - **Standalone components** to simplify module dependency management
 - `inject()` for efficient **dependency injection**
+
+🔗 **Live Demo:** [https://crm-dashboard-sigma.vercel.app/customers](https://crm-dashboard-sigma.vercel.app/customers)
 
 ## Architecture
 
@@ -36,22 +49,6 @@ All sorting, pagination, and filtering of data are handled by a mock frontend se
 
 - There are a few enhancements planned for future releases. For more information, check the **"Pending Tasks"** section.
 
-## Libraries
-
-    - Node v20
-    - Nx v20
-    - Ngrx
-    - Angular v18
-    - Angular Material 18
-    - Tailwind
-    - Eslint
-    - Jest
-    - Prettier
-    - Husky
-    - Lint staged
-    - JsonServer (Mock API)
-
-    This project was created using Node v20
 
 ## Run tasks
 
