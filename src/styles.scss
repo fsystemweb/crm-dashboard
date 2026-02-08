@@ -8,6 +8,35 @@
 html,
 body {
   height: 100%;
-  @apply bg-gray-100 text-gray-800;
-  font-family: Poppins;
+  @apply bg-gray-50 text-gray-800 antialiased;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Smooth transitions base */
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-glass;
 }

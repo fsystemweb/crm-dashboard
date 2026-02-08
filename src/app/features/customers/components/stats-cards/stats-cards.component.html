@@ -1,50 +1,54 @@
-<div class="justify-around bg-white p-4 md:p-6 lg:p-8  rounded-[30px] shadow-sm grid md:grid lg:flex">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
   <!-- Total Customers -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-2">
-    <div class="mr-6 hidden md:block lg:block">
+  <div class="bg-white p-6 rounded-3xl shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 group">
+    <div class="flex items-center space-x-4">
       <div class="bg-green-100 h-[84px] w-[84px] rounded-full flex justify-center items-center">
         <mat-icon svgIcon="users" class="text-green-600 stats-icon" />
       </div>
-    </div>
-    <div>
-      <p class="text-sm text-customGreyFont">Total Customers</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalCustomer | number }}</p>
-      <app-percentage-indicator [indicator]="statsCards.customerPercentage" />
+      <div>
+        <p class="text-sm font-medium text-gray-400">Total Customers</p>
+        <p class="text-3xl font-bold text-gray-800 mt-1">{{ statsCards.totalCustomer | number }}</p>
+        <div class="mt-2">
+          <app-percentage-indicator [indicator]="statsCards.customerPercentage" />
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="border-solid border-r-[1px] border-grey-50"></div>
   <!-- Members -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-2">
-    <div class="mr-6 hidden md:block lg:block">
+  <div class="bg-white p-6 rounded-3xl shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 group">
+    <div class="flex items-center space-x-4">
       <div class="bg-green-100 h-[84px] w-[84px] rounded-full flex justify-center items-center">
         <mat-icon svgIcon="user-verified" class="text-green-600 stats-icon" />
       </div>
-    </div>
-    <div>
-      <p class="text-sm text-customGreyFont">Members</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalMembers | number }}</p>
-      <app-percentage-indicator [indicator]="statsCards.membersPercentage" />
+      <div>
+        <p class="text-sm font-medium text-gray-400">Members</p>
+        <p class="text-3xl font-bold text-gray-800 mt-1">{{ statsCards.totalMembers | number }}</p>
+        <div class="mt-2">
+          <app-percentage-indicator [indicator]="statsCards.membersPercentage" />
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="border-solid border-r-[1px] border-grey-50"></div>
-
   <!-- Active Now -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-2">
-    <div class="mr-6 hidden md:block lg:block">
+  <div class="bg-white p-6 rounded-3xl shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 group">
+    <div class="flex items-center space-x-4">
       <div class="bg-green-100 h-[84px] w-[84px] rounded-full flex justify-center items-center">
         <mat-icon svgIcon="monitor" class="text-green-600 stats-icon" />
       </div>
-    </div>
-    <div>
-      <p class="text-sm text-customGreyFont">Active Now</p>
-      <p class="text-3xl font-semibold mt-2">{{ statsCards.totalUserActive | number }}</p>
-      <div class="flex mt-2">
-        @for (user of statsCards.userActives; track user.fullname) {
-        <img [src]="user.picture | userPicture" [alt]="user.fullname" [matTooltip]="user | userRole"
-          class="w-6 h-6 rounded-full border-2 border-white -ml-2 cursor-pointer" />
-        }
+      <div>
+        <p class="text-sm font-medium text-gray-400">Active Now</p>
+        <p class="text-3xl font-bold text-gray-800 mt-1">{{ statsCards.totalUserActive | number }}</p>
+        <div class="flex -space-x-2 mt-2 overflow-hidden py-1 pl-1">
+          @for (user of statsCards.userActives; track user.fullname) {
+          <img
+            [src]="user.picture | userPicture"
+            [alt]="user.fullname"
+            [matTooltip]="user | userRole"
+            class="inline-block w-8 h-8 rounded-full ring-2 ring-white cursor-pointer hover:z-10 hover:scale-110 transition-transform" />
+          }
+        </div>
       </div>
     </div>
   </div>
